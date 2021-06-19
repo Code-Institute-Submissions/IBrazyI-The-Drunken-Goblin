@@ -20,8 +20,9 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-def hello():
-    return "Welcome to The Drunken Goblin"
+@app.route("/landing")
+def landing():
+    return render_template("landing.html")
 
 
 if __name__ == "__main__":
