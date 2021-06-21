@@ -1,0 +1,15 @@
+body {
+    background-color: #979797;
+}
+
+.landing-image {
+    width: 100%;
+    height: 750px;
+    background-image: url(/static/images/tavern.jpg);
+    background-size: auto;
+    background-position: center;
+}
+
+.landing-text-container {
+    color: whitesmoke;
+}
