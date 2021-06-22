@@ -2,6 +2,14 @@ body {
     background-color: #979797;
 }
 
+h1 {
+    font-size: 50px;
+}
+
+p {
+    font-size: 20px;
+}
+
 .landing-image {
     width: 100%;
     height: 750px;
@@ -12,6 +20,18 @@ body {
 
 .landing-text-container {
     color: whitesmoke;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.landing-spacer {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.landing-item {
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
 .login-image {
@@ -21,4 +41,8 @@ body {
     background-image: url(/static/images/loginbackground.jpg);
     background-size: auto;
     background-position: center;
+}
+
+.dark-background {
+    background-color: #979797a1;
 }
