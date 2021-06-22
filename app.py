@@ -30,6 +30,31 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/register.html")
+def register():
+    return render_template("register.html")
+
+
+@app.route("/create.html")
+def create():
+    return render_template("create.html")
+
+
+@app.route("/edit.html")
+def edit():
+    return render_template("edit.html")
+
+
+@app.route("/profile.html")
+def profile():
+    return render_template("profile.html")
+
+
+@app.route("/tavern.html")
+def tavern():
+    return render_template("tavern.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
