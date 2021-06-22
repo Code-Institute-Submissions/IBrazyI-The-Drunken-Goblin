@@ -34,6 +34,18 @@
             <div class="col s12 landing-text-container dark-background">
             <div class="col s12">
                 <p class="center-align landing-item">Do you want to log in?</p>
+                <div class="row">
+                    <div class="input-field col s2 offset-s5">
+                        <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <label for="username">Username</label>
+                      </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s2 offset-s5">
+                        <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <label for="password">Password</label>
+                    </div>
+                  </div>
                 <a class="waves-effect waves-light btn-large teal lighten-1 center-align landing-item">Log In!</a>
             </div>
             <div class="col s12">
