@@ -25,10 +25,6 @@ def landing():
     return render_template("landing.html")
 
 
-@app.route("/login.html")
-def login():
-    return render_template("login.html")
-
 
 @app.route("/register.html")
 def register():
