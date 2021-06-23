@@ -4,6 +4,7 @@ from flask import (
     Flask, flash, render_template, redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 import pymongo
 if os.path.exists("env.py"):
     import env
@@ -26,7 +27,7 @@ def landing():
 
 
 
-@app.route("/register.html")
+@app.route("/register.html", methods=["GET", "POST"])
 def register():
     return render_template("register.html")
 

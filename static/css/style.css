@@ -10,6 +10,10 @@ p {
     font-size: 20px;
 }
 
+form {
+    background-color: black;
+}
+
 .nav-icon {
     margin-top: 15px;
 }
