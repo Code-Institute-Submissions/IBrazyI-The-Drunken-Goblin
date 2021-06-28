@@ -1,5 +1,6 @@
 from logging import debug
 import os
+import re
 from flask import (
     Flask, flash, render_template, redirect, request, session, url_for)
 from flask_pymongo import PyMongo
@@ -29,6 +30,26 @@ def landing():
 
 @app.route("/register.html", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        returning_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+        returning_email = mongo.db.users.find_one(
+            {"email": request.form.get("email")})
+        if returning_user:
+            flash("Username already in use")
+            return redirect(url_for("register"))
+        if returning_email:
+            flash("Email already in use")
+            return redirect(url_for("register"))
+        register = {
+            "username": request.form.get("username").lower(),
+            "email": request.form.get("email"),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
+
+        session["user"] = request.form.get("username").lower()
+        flash("Thank you for registering with us!")
     return render_template("register.html")
 
 
