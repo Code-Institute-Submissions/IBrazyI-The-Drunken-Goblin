@@ -30,31 +30,33 @@
         </div>
     </div>
 
+
     <div class="row center">
         <div class="col s12 login-image valign-wrapper">
-            <div class="col s12 landing-text-container dark-background">
-            <div class="col s12">
-                <p class="center-align landing-item">Do you want to log in?</p>
-                <div class="row">
+            <form class="col s12 dark-background" method="POST" action="{{ url_for('landing') }}">
+                <div class="row login-input">
                     <div class="input-field col s2 offset-s5">
                         <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="username">Username</label>
-                      </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s2 offset-s5">
                         <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="password">Password</label>
                     </div>
-                  </div>
-                <a class="waves-effect waves-light btn-large teal lighten-1 center-align landing-item">Log In!</a>
-            </div>
-            <div class="col s12">
-                <p class="center-align landing-item">Do you want to register?</p>
-                <a class="waves-effect waves-light btn-large teal lighten-1 center-align landing-item" href="{{ url_for('register') }}">Register!</a>
-            </div>
+                </div>
+                <div class="row">
+                    <button type="submit" class="col s2 offset-s5 btn-large">
+                        Login!
+                    </button>
+                </div>
+                <div class="row col s12">
+                    <p class="center-align landing-item">Do you want to register?</p>
+                    <a class="waves-effect waves-light btn-large teal lighten-1 center-align landing-item" href="{{ url_for('register') }}">Register!</a>
+                </div>
+            </form>
         </div>
-    </div>
     </div>
 
     {% endblock %}

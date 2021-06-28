@@ -58,3 +58,11 @@ form {
 .dark-background {
     background-color: #97979773;
 }
+
+form {
+    background-color: transparent;
+}
+
+.login-input {
+    margin-top: 40px;
+}
