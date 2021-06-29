@@ -22,8 +22,25 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/landing")
+@app.route("/landing.html", methods=["GET", "POST"])
 def landing():
+    if request.method == "POST":
+        returning_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if returning_user:
+            if check_password_hash(
+                returning_user["password"], request.form.get("password")):
+                    session["user"] = request.form.get("username").lower()
+                    flash ("Welcome to the Tavern, {}".format(request.form.get("username")))
+            else:
+                flash("Username and/or Password Incorrect. Please try again.")
+                return redirect(url_for("landing"))
+
+        else:
+            flash("Username and/or Password Incorrect. Please try again.")
+            return redirect(url_for("landing"))
+            
     return render_template("landing.html")
 
 
@@ -70,7 +87,8 @@ def profile():
 
 @app.route("/tavern.html")
 def tavern():
-    return render_template("tavern.html")
+    characters = list(mongo.db.characters.find())
+    return render_template("tavern.html", characters=characters)
 
 
 if __name__ == "__main__":
