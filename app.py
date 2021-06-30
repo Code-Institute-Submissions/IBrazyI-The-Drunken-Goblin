@@ -32,9 +32,10 @@ def landing():
                 returning_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash ("Welcome to the Tavern, {}".format(request.form.get("username")))
+                    return redirect(url_for("tavern"))
             else:
                 flash("Username and/or Password Incorrect. Please try again.")
-                return redirect(url_for("landing"))
+                return redirect(url_for("landing", username=session["user"]))
 
         else:
             flash("Username and/or Password Incorrect. Please try again.")
@@ -66,6 +67,7 @@ def register():
 
         session["user"] = request.form.get("username").lower()
         flash("Thank you for registering with us!")
+        return redirect(url_for("profile.html", username=session["user"]))
             
     return render_template("register.html")
 
@@ -80,9 +82,11 @@ def edit():
     return render_template("edit.html")
 
 
-@app.route("/profile.html")
+@app.route("/profile.html", methods=["GET", "POST"])
 def profile():
-    return render_template("profile.html")
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("profile.html", username=username)
 
 
 @app.route("/tavern.html")
