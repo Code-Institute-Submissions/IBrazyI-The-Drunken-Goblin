@@ -13,7 +13,6 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
-
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
@@ -67,6 +66,7 @@ def register():
 
         session["user"] = request.form.get("username").lower()
         flash("Thank you for registering with us!")
+            
     return render_template("register.html")
 
 
