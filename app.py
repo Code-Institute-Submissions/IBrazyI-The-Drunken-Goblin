@@ -74,12 +74,12 @@ def register():
 
 @app.route("/create")
 def create():
-    return render_template("profile.html")
+    return render_template("create.html")
 
 
 @app.route("/edit")
 def edit():
-    return render_template("edit.html")
+    return render_template("")
 
 
 @app.route("/profile.html", methods=["GET", "POST"])
