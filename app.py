@@ -84,10 +84,8 @@ def edit():
 
 @app.route("/profile.html", methods=["GET", "POST"])
 def profile():
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    if session["user"]:
-        return render_template("profile.html", username=username)
+    if session.get("user"):
+        return render_template("profile.html", username=session["user"])
 
     return redirect(url_for("landing"))
 
