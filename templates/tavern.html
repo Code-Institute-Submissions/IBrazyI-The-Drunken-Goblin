@@ -1,9 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>This page will display all characters in the data base where you will be able to select favariots to be stored on your profile.</h1>
+<div class="row col 12 center-align">
+    <div class="col s3 character-image"><h3>Portrait</h3></div>
+    <div class="col s1 character-name"><h3>Name</h3></div>
+    <div class="col s1 character-race"><h3>Race</h3></div>
+    <div class="col s1 character-class"><h3>Class</h3></div>
+    <div class="col s1 character-likes"><h3>Likes</h3></div>
+    <div class="col s1 character-dislikes"><h3>Dislikes</h3></div>
+    <div class="col s2 character-bio"><h3>Backstory</h3></div>
+    <div class="col s1"><h3>Favourite</h3></div>
+</div>
 {% for character in characters %}
     <div class="row col 12 center-align">
-        <div class="col s4 character-image">This will be an image</div>
+        <div class="col s3 character-image">This will be an image</div>
         <div class="col s1 character-name">{{ character.character_name }}</div>
         <div class="col s1 character-race">{{ character.character_race }}</div>
         <div class="col s1 character-class">{{ character.character_class }}</div>
