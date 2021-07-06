@@ -72,7 +72,7 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/create")
+@app.route("/create", methods=["GET", "POST"])
 def create():
     if request.method =="POST":
         character = {
@@ -84,7 +84,7 @@ def create():
             "character_bio": request.form.get("character_bio"),
         }
         mongo.db.characters.insert_one(character)
-        flash("{{ character_name }} Added")
+        flash("A new Hero has entered the tavern!")
         return redirect(url_for("profile"))
 
 
@@ -93,7 +93,7 @@ def create():
 
     classes = mongo.db.classes
     classes_list = classes.find().sort("class_name", 1)
-    
+
     return render_template("create.html", races_list=races_list, classes_list=classes_list)
 
 
