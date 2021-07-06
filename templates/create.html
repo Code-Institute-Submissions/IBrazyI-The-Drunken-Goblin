@@ -6,46 +6,50 @@
     <form class="col s6 offset-s3" method="POST" action="">
         <div class="row">
             <div class="input-field col s12">
-            <input placeholder="Character Name" id="character-name" type="text">
-            <label for="character-name">Character Name</label>
+            <input placeholder="Character Name" name="character_name" id="character_name" type="text">
+            <label for="character_name">Character Name</label>
             </div>
         </div>
         <div class="input-field col s12">
-            <select>
-              <option value="" disabled selected>Choose your option</option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
+            <select id="race_name" name="race_name" class="validate" required>
+              <option value="" disabled selected>Choose a race</option>
+              {% for races in races_list %}
+                <option value="{{ races.race_name }}">{{ races.race_name }}</option>
+              {% endfor %}
             </select>
             <label>Race</label>
           </div>
           <div class="input-field col s12">
-            <select>
-              <option value="" disabled selected>Choose your option</option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
+            <select id="class_name" name="class_name" class="validate" required>
+              <option value="" disabled selected>Choose a class</option>
+              {% for classes in classes_list %}
+                <option value="{{ classes.class_name }}">{{ classes.class_name }}</option>
+              {% endfor %} 
             </select>
             <label>Class</label>
           </div>
           <div class="row">
             <div class="input-field col s12">
-            <input placeholder="Likes" id="likes" type="text">
-            <label for="likes">Likes</label>
+            <input placeholder="Likes" name="character_likes" id="character_likes" type="text">
+            <label for="character_likes">Likes</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-            <input placeholder="Dislikes" id="dislikes" type="text">
-            <label for="dislikes">Dislikes</label>
+            <input placeholder="Dislikes" name="character_dislikes" id="character_dislikes" type="text">
+            <label for="character_dislikes">Dislikes</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s12">
-            <input placeholder="Bio" id="bio" type="text">
-            <label for="bio">Bio</label>
-            </div>
-        </div>
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="character_bio" name="character_bio" maxlength="250" type="text" class="materialize-textarea"></textarea>
+                  <label for="character_bio">Bio</label>
+                </div>
+              </div>
+            </form>
+          </div>
     </form>
 </div>
 {% endblock %}

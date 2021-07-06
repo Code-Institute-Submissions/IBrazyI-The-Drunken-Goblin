@@ -74,7 +74,27 @@ def register():
 
 @app.route("/create")
 def create():
-    return render_template("create.html")
+    if request.method =="POST":
+        character = {
+            "character_name": request.form.get("character_name"),
+            "character_race": request.form.get("character_race"),
+            "character_class": request.form.get("character_class"),
+            "character_likes": request.form.get("character_likes"),
+            "character_dislikes": request.form.get("character_dislikes"),
+            "character_bio": request.form.get("character_bio"),
+        }
+        mongo.db.characters.insert_one(character)
+        flash("{{ character_name }} Added")
+        return redirect(url_for("profile"))
+
+
+    races = mongo.db.races
+    races_list = races.find().sort("race_name", 1)
+
+    classes = mongo.db.classes
+    classes_list = classes.find().sort("class_name", 1)
+    
+    return render_template("create.html", races_list=races_list, classes_list=classes_list)
 
 
 @app.route("/edit")
