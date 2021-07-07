@@ -7,6 +7,8 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 import pymongo
+import cloudinary
+import cloudinary.uploader
 if os.path.exists("env.py"):
     import env
 
@@ -18,6 +20,7 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+
 
 
 @app.route("/")
@@ -72,7 +75,7 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/create", methods=["GET", "POST"])
+@app.route("/create.html", methods=["GET", "POST"])
 def create():
     if request.method =="POST":
         character = {
@@ -82,6 +85,7 @@ def create():
             "character_likes": request.form.get("character_likes"),
             "character_dislikes": request.form.get("character_dislikes"),
             "character_bio": request.form.get("character_bio"),
+            "character_user": session["user"]
         }
         mongo.db.characters.insert_one(character)
         flash("A new Hero has entered the tavern!")
@@ -97,14 +101,39 @@ def create():
     return render_template("create.html", races_list=races_list, classes_list=classes_list)
 
 
-@app.route("/edit")
-def edit():
-    return render_template("")
+@app.route("/edit.html/<character_id>", methods=['GET', 'POST'])
+def edit(character_id):
+    if request.method == "POST":
+        character = {
+            "character_name": request.form.get("character_name"),
+            "character_race": request.form.get("character_race"),
+            "character_class": request.form.get("character_class"),
+            "character_likes": request.form.get("character_likes"),
+            "character_dislikes": request.form.get("character_dislikes"),
+            "character_bio": request.form.get("character_bio"),
+            "character_user": session["user"]
+        }
+        mongo.db.characters.update({"_id": ObjectId(character_id)}, character)
+
+    character = mongo.db.characters
+    character_edit = character.find_one({"_id": ObjectId(character_id)})
+    races = mongo.db.races
+    races_list = races.find().sort("race_name", 1)
+    classes = mongo.db.classes
+    classes_list = classes.find().sort("class_name", 1)
+    return render_template("edit.html", character_edit=character_edit, races_list=races_list, classes_list=classes_list)
 
 
 @app.route("/profile.html", methods=["GET", "POST"])
 def profile():
     if session.get("user"):
+        characters = mongo.db.characters
+        characters_list = characters.find().sort("character_name", 1)
+        print(characters_list)
+        #made_by_user = list(characters.find({"character_user": "session['user']"}))
+        
+        
+            
         return render_template("profile.html", username=session["user"])
 
     return redirect(url_for("landing"))

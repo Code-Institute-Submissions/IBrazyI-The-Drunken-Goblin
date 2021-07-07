@@ -11,7 +11,7 @@
     <div class="col s1"><h3>Favourite</h3></div>
 </div>
 {% for character in characters %}
-    <div class="row col 12 center-align">
+    <div class="row col 12 center-align valign-wrapper">
         <div class="col s3 character-image">This will be an image</div>
         <div class="col s1 character-name">{{ character.character_name }}</div>
         <div class="col s1 character-race">{{ character.character_race }}</div>
@@ -20,6 +20,7 @@
         <div class="col s1 character-dislikes">{{ character.character_dislikes }}</div>
         <div class="col s2 character-bio">{{ character.character_bio }}</div>
         <div class="col s1"><i class="far fa-heart"></i></div>
+        <div class="col s1"><a class="waves-effect waves-light btn-small teal lighten-1 center-align landing-item" href="{{ url_for('edit', character_id=characters._id)}}">Edit Hero</a></div>
     </div>
 {% endfor %}
 

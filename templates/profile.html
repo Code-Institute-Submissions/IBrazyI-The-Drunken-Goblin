@@ -8,7 +8,18 @@
     </div>    
 </div>
 <div class="row center">
-    <p>This will show the heroes you have made!</p>
+    {% for characters in made_by_user %}
+        <div class="row col 12 center-align">
+            <div class="col s3 character-image">This will be an image</div>
+            <div class="col s1 character-name">{{ character.character_name }}</div>
+            <div class="col s1 character-race">{{ character.character_race }}</div>
+            <div class="col s1 character-class">{{ character.character_class }}</div>
+            <div class="col s1 character-likes">{{ character.character_likes }}</div>
+            <div class="col s1 character-dislikes">{{ character.character_dislikes }}</div>
+            <div class="col s2 character-bio">{{ character.character_bio }}</div>
+            <div class="col s1"><i class="far fa-heart"></i></div>
+        </div>
+    {% endfor %}
 </div>
 <div class="row center">
     <p>This will show the heroes you favourited!</p>

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Edit Characters</h1>
+
+<div class="row red-text">
+    <form class="col s6 offset-s3" method="POST" action="{{ url_for('edit', character_id=characters._id) }}">
+        <div class="row">
+            <div class="input-field col s12">
+            <input placeholder="Character Name" name="character_name" id="character_name" type="text">
+            <label for="character_name">Character Name</label>
+            </div>
+        </div>
+        <div class="input-field col s12">
+            <select id="character_race" name="character_race" class="validate" required>
+              <option value="" disabled selected>Choose a race</option>
+              {% for races in races_list %}
+                <option value="{{ races.race_name }}">{{ races.race_name }}</option>
+              {% endfor %}
+            </select>
+            <label>Race</label>
+          </div>
+          <div class="input-field col s12">
+            <select id="character_class" name="character_class" class="validate" required>
+              <option value="" disabled selected>Choose a class</option>
+              {% for classes in classes_list %}
+                <option value="{{ classes.class_name }}">{{ classes.class_name }}</option>
+              {% endfor %} 
+            </select>
+            <label>Class</label>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+            <input placeholder="Likes" name="character_likes" id="character_likes" type="text">
+            <label for="character_likes">Likes</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+            <input placeholder="Dislikes" name="character_dislikes" id="character_dislikes" type="text">
+            <label for="character_dislikes">Dislikes</label>
+            </div>
+        </div>
+        <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="character_bio" name="character_bio" maxlength="250" type="text" class="materialize-textarea"></textarea>
+                  <label for="character_bio">Bio</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12 center-align">
+                  <button type="submit" class="waves-effect waves-light btn-large teal lighten-1 center-align landing-item" href="{{ url_for('profile') }}">You seem different Hero</button>
+                </div>
+              </div>
+            </form>
+          </div>
+    </form>
+</div>
+{% endblock %}
