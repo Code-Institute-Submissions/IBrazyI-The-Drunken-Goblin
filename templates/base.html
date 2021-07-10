@@ -14,29 +14,14 @@
 <body>
 
     <nav>
-        <div class="nav-wrapper teal lighten-1">
-          <a href="{{ url_for('tavern') }}" class="brand-logo center fas fa-beer nav-icon">Enter the Tavern.</a>
-          <ul class="left hide-on-med-and-down">
-            {% if session.user %}
-              <li><a href="{{ url_for('create') }}">Create</a></li>
-              <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-              <li><a href="{{ url_for('logout') }}">Logout</a></li>
-            {% else %}
-              <li><a href="{{ url_for('register') }}">Register</a></li>
-            {% endif %}
-          </ul>
+        <div class="">
+          <a href="{{ url_for('tavern') }}" class="">Enter the Tavern.</a>
+          <a href="{{ url_for('create') }}">Create</a>
+          <a href="{{ url_for('profile') }}">Profile</a>
+          <a href="{{ url_for('logout') }}">Logout</a>
+          <a href="{{ url_for('register') }}">Register</a>
         </div>
       </nav>
-
-      {% with messages = get_flashed_messages() %}
-      {% if messages %}
-          {% for message in messages %}
-              <div class="row flashes">
-                  <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
-              </div>
-          {% endfor %}
-      {% endif %}
-  {% endwith %}
 
       <main>
           {% block content %}
@@ -44,26 +29,26 @@
       </main>
 
       
-      <footer class="page-footer teal lighten-1">
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text">Like the site?</h5>
-              <p class="grey-text text-lighten-4">Get involved on social media or check out my other projects!</p>
+      <footer class="">
+        <div class="">
+          <div class="">
+            <div class="">
+              <h5 class="">Like the site?</h5>
+              <p class="">Get involved on social media or check out my other projects!</p>
             </div>
-            <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Socials</h5>
+            <div class="">
+              <h5 class="">Socials</h5>
               <ul>
-                <li><a class="grey-text text-lighten-3" href="#!">GitHub</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">LinkedIn</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+                <li><a class="" href="#!">GitHub</a></li>
+                <li><a class="" href="#!">Facebook</a></li>
+                <li><a class="" href="#!">LinkedIn</a></li>
+                <li><a class="" href="#!">Twitter</a></li>
               </ul>
             </div>
           </div>
         </div>
-        <div class="footer-copyright">
-          <div class="container">
+        <div class="">
+          <div class="">
           Created by Joshua Brazington
           </div>
         </div>

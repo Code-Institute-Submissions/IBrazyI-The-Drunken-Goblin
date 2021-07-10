@@ -1,32 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="col s6 offset-s3 center-align">
+<div class="">
     <h1>Create an account</h1>
 </div>
 
-<div class="row">
-    <form class="col s12 teal-text" method="POST" action="{{ url_for('register') }}">
-        <div class="row">
-            <div class="input-field col s4 offset-s4">
+<div class="">
+    <form class="" method="POST" action="{{ url_for('register') }}">
+        <div class="">
+            <div class="">
                 <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                 <label for="username">Username</label>
             </div>
         </div>
-        <div class="row">
-            <div class="input-field col s4 offset-s4">
+        <div class="">
+            <div class="">
             <input id="email" name="email" type="email" class="validate" required>
             <label for="email">Email</label>
             </div>
         </div>
-        <div class="row">
-            <div class="input-field col s4 offset-s4">
+        <div class="">
+            <div class="">
                 <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                 <label for="password">Password</label>
             </div>
         </div>
-        <div class="row">
-            <button type="submit" class="col s2 offset-s5 btn-large">
+        <div class="">
+            <button type="submit" class="">
                 Register
             </button>
         </div>

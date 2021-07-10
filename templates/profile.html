@@ -2,26 +2,26 @@
 {% block content %}
 <h1>Welcome to your profile {{ username }}</h1>
 
-<div class="row center">
-    <div class="col s12">
-        <a class="waves-effect waves-light btn-large teal lighten-1 center-align landing-item" href="{{ url_for('create') }}">Create a new Hero?</a>
+<div class="">
+    <div class="">
+        <a class="" href="{{ url_for('create') }}">Create a new Hero?</a>
     </div>    
 </div>
-<div class="row center">
+<div class="">
     {% for characters in made_by_user %}
-        <div class="row col 12 center-align">
-            <div class="col s3 character-image">This will be an image</div>
-            <div class="col s1 character-name">{{ character.character_name }}</div>
-            <div class="col s1 character-race">{{ character.character_race }}</div>
-            <div class="col s1 character-class">{{ character.character_class }}</div>
-            <div class="col s1 character-likes">{{ character.character_likes }}</div>
-            <div class="col s1 character-dislikes">{{ character.character_dislikes }}</div>
-            <div class="col s2 character-bio">{{ character.character_bio }}</div>
-            <div class="col s1"><i class="far fa-heart"></i></div>
+        <div class="">
+            <div class="">This will be an image</div>
+            <div class="">{{ character.character_name }}</div>
+            <div class="">{{ character.character_race }}</div>
+            <div class="">{{ character.character_class }}</div>
+            <div class="">{{ character.character_likes }}</div>
+            <div class="">{{ character.character_dislikes }}</div>
+            <div class="">{{ character.character_bio }}</div>
+            <div class=""><i class=""></i></div>
         </div>
     {% endfor %}
 </div>
-<div class="row center">
+<div class="">
     <p>This will show the heroes you favourited!</p>
 </div>
 {% endblock %}

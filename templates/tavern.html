@@ -1,26 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="row col 12 center-align">
-    <div class="col s3 character-image"><h3>Portrait</h3></div>
-    <div class="col s1 character-name"><h3>Name</h3></div>
-    <div class="col s1 character-race"><h3>Race</h3></div>
-    <div class="col s1 character-class"><h3>Class</h3></div>
-    <div class="col s1 character-likes"><h3>Likes</h3></div>
-    <div class="col s1 character-dislikes"><h3>Dislikes</h3></div>
-    <div class="col s2 character-bio"><h3>Backstory</h3></div>
-    <div class="col s1"><h3>Favourite</h3></div>
+<div class="">
+    <div class=""><h3>Portrait</h3></div>
+    <div class=""><h3>Name</h3></div>
+    <div class=""><h3>Race</h3></div>
+    <div class=""><h3>Class</h3></div>
+    <div class=""><h3>Likes</h3></div>
+    <div class=""><h3>Dislikes</h3></div>
+    <div class=""><h3>Backstory</h3></div>
+    <div class=""><h3>Favourite</h3></div>
 </div>
 {% for character in characters %}
-    <div class="row col 12 center-align valign-wrapper">
-        <div class="col s3 character-image">This will be an image</div>
-        <div class="col s1 character-name">{{ character.character_name }}</div>
-        <div class="col s1 character-race">{{ character.character_race }}</div>
-        <div class="col s1 character-class">{{ character.character_class }}</div>
-        <div class="col s1 character-likes">{{ character.character_likes }}</div>
-        <div class="col s1 character-dislikes">{{ character.character_dislikes }}</div>
-        <div class="col s2 character-bio">{{ character.character_bio }}</div>
-        <div class="col s1"><i class="far fa-heart"></i></div>
-        <div class="col s1"><a class="waves-effect waves-light btn-small teal lighten-1 center-align landing-item" href="{{ url_for('edit', character_id=characters._id)}}">Edit Hero</a></div>
+    <div class="">
+        <div class="">This will be an image</div>
+        <div class="">{{ character.character_name }}</div>
+        <div class="">{{ character.character_race }}</div>
+        <div class="">{{ character.character_class }}</div>
+        <div class="">{{ character.character_likes }}</div>
+        <div class="">{{ character.character_dislikes }}</div>
+        <div class="">{{ character.character_bio }}</div>
+        <div class=""><i class=""></i></div>
+        <div class=""><a class="" href="{{ url_for('edit', character_id=characters._id)}}">Edit Hero</a></div>
     </div>
 {% endfor %}
 
