@@ -8,17 +8,19 @@
     </div>    
 </div>
 <div class="">
-    {% for characters in made_by_user %}
-        <div class="">
-            <div class="">This will be an image</div>
-            <div class="">{{ character.character_name }}</div>
-            <div class="">{{ character.character_race }}</div>
-            <div class="">{{ character.character_class }}</div>
-            <div class="">{{ character.character_likes }}</div>
-            <div class="">{{ character.character_dislikes }}</div>
-            <div class="">{{ character.character_bio }}</div>
-            <div class=""><i class=""></i></div>
-        </div>
+    {% for character in usercharacters %}
+        {% if character.character_user == session.user %}
+            <div class="">
+                <div class="">This will be an image</div>
+                <div class="">{{ character.character_name }}</div>
+                <div class="">{{ character.character_race }}</div>
+                <div class="">{{ character.character_class }}</div>
+                <div class="">{{ character.character_likes }}</div>
+                <div class="">{{ character.character_dislikes }}</div>
+                <div class="">{{ character.character_bio }}</div>
+                <div class=""><i class=""></i></div>
+            </div>
+        {% endif %}
     {% endfor %}
 </div>
 <div class="">

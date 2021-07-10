@@ -23,6 +23,7 @@ mongo = PyMongo(app)
 
 
 
+
 @app.route("/")
 @app.route("/landing.html", methods=["GET", "POST"])
 def landing():
@@ -37,7 +38,7 @@ def landing():
                 existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 #Stores session"user" where the username is passed into the profile function
-                return redirect(url_for('profile', username=session["user"]))
+                return redirect(url_for('profile'))
                 
             else:
                 #Incorrect Password
@@ -64,14 +65,23 @@ def edit():
     return render_template(url_for('edit'))
 
 
+
 @app.route("/profile.html", methods=["GET", "POST"])
 def profile():
-    return render_template(url_for("profile"))
+
+    usercharacters = mongo.db.characters.find()
+
+    return render_template(url_for('profile'), usercharacters=usercharacters)
+    
 
 
 @app.route("/tavern.html")
 def tavern():
-    return render_template('tavern.html')
+
+    characters = mongo.db.characters.find()
+
+    
+    return render_template('tavern.html', characters=characters)
 
 # App Routes that require REDIRECT
 
