@@ -70,13 +70,35 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Complete")
         return redirect(url_for('profile'))  
-        
+
     return render_template(url_for('register'))
 
 
 @app.route("/create.html", methods=["GET", "POST"])
 def create():
-    return render_template(url_for('create'))
+    if request.method == "POST":
+        new_character = {
+            "character_name": request.form.get("character_name"),
+            "character_race": request.form.get("character_race"),
+            "character_class": request.form.get("character_class"),
+            "character_likes": request.form.get("character_likes"),
+            "character_dislikes": request.form.get("character_dislikes"),
+            "character_bio": request.form.get("character_bio"),
+            "character_user": request.form.get("character_user")
+        }
+
+        mongo.db.characters.insert_one(new_character)
+        return redirect(url_for("profile"))
+
+    races = mongo.db.races
+    races_list = races.find().sort("race_name", 1)
+    print(races_list)
+    
+    classes = mongo.db.classes
+    classes_list = classes.find().sort("class_name", 1)
+    print(classes_list)
+
+    return render_template('create.html', races_list=races_list, classes_list=classes_list)
 
 
 @app.route("/edit.html", methods=["GET", "POST"])
