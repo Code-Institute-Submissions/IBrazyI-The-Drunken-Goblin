@@ -26,6 +26,26 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/landing.html", methods=["GET", "POST"])
 def landing():
+    if request.method == "POST":
+        #Checking that Username exists
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+                #Checking password entered matches
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                #Stores session"user" where the username is passed into the profile function
+                return redirect(url_for('profile', username=session["user"]))
+                
+            else:
+                #Incorrect Password
+                return redirect(url_for('landing'))
+
+        else:
+            return redirect(url_for('landing')) 
+
     return render_template(url_for('landing'))
 
 
