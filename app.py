@@ -26,38 +26,39 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/landing.html", methods=["GET", "POST"])
 def landing():
-    return render_template("landing.html")
-
+    return render_template(url_for('landing'))
 
 
 @app.route("/register.html", methods=["GET", "POST"])
 def register():        
-    return render_template("register.html")
+    return render_template(url_for('register'))
 
 
 @app.route("/create.html", methods=["GET", "POST"])
 def create():
-    return render_template("create.html")
+    return render_template(url_for('create'))
 
 
 @app.route("/edit.html", methods=["GET", "POST"])
 def edit():
-    return render_template("edit.html")
+    return render_template(url_for('edit'))
 
 
 @app.route("/profile.html", methods=["GET", "POST"])
 def profile():
-    return redirect(url_for("landing"))
-
-
-@app.route("/logout")
-def logout():
-    return redirect(url_for("landing"))
+    return render_template(url_for("profile"))
 
 
 @app.route("/tavern.html")
 def tavern():
-    return render_template("tavern.html")
+    return render_template('tavern.html')
+
+# App Routes that require REDIRECT
+
+
+@app.route("/logout")
+def logout():
+    return redirect(url_for('landing'))
 
 
 if __name__ == "__main__":
