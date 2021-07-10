@@ -51,7 +51,26 @@ def landing():
 
 
 @app.route("/register.html", methods=["GET", "POST"])
-def register():        
+def register(): 
+    if request.method =="POST":
+        already_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()}) 
+
+        if already_user:
+            flash("That username already exists")
+            return redirect(url_for('register'))
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)    
+
+        # Add the new "user" to the "session"
+        session["user"] = request.form.get("username").lower()
+        flash("Registration Complete")
+        return redirect(url_for('profile'))  
+        
     return render_template(url_for('register'))
 
 
