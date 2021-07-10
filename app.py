@@ -80,7 +80,6 @@ def tavern():
 
     characters = mongo.db.characters.find()
 
-    
     return render_template('tavern.html', characters=characters)
 
 # App Routes that require REDIRECT
@@ -88,6 +87,9 @@ def tavern():
 
 @app.route("/logout")
 def logout():
+
+    session.pop("user")
+
     return redirect(url_for('landing'))
 
 
