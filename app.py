@@ -26,130 +26,38 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/landing.html", methods=["GET", "POST"])
 def landing():
-    if request.method == "POST":
-        returning_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
-
-        if returning_user:
-            if check_password_hash(
-                returning_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash ("Welcome to the Tavern, {}".format(request.form.get("username")))
-                    return redirect(url_for("tavern"))
-            else:
-                flash("Username and/or Password Incorrect. Please try again.")
-                return redirect(url_for("landing", username=session["user"]))
-
-        else:
-            flash("Username and/or Password Incorrect. Please try again.")
-            return redirect(url_for("landing"))
-            
     return render_template("landing.html")
 
 
 
 @app.route("/register.html", methods=["GET", "POST"])
-def register():
-    if request.method == "POST":
-        returning_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
-        returning_email = mongo.db.users.find_one(
-            {"email": request.form.get("email")})
-        if returning_user:
-            flash("Username already in use")
-            return redirect(url_for("register"))
-        if returning_email:
-            flash("Email already in use")
-            return redirect(url_for("register"))
-        register = {
-            "username": request.form.get("username").lower(),
-            "email": request.form.get("email"),
-            "password": generate_password_hash(request.form.get("password"))
-        }
-        mongo.db.users.insert_one(register)
-
-        session["user"] = request.form.get("username").lower()
-        flash("Thank you for registering with us!")
-        return redirect(url_for("profile.html", username=session["user"]))
-            
+def register():        
     return render_template("register.html")
 
 
 @app.route("/create.html", methods=["GET", "POST"])
 def create():
-    if request.method =="POST":
-        character = {
-            "character_name": request.form.get("character_name"),
-            "character_race": request.form.get("character_race"),
-            "character_class": request.form.get("character_class"),
-            "character_likes": request.form.get("character_likes"),
-            "character_dislikes": request.form.get("character_dislikes"),
-            "character_bio": request.form.get("character_bio"),
-            "character_user": session["user"]
-        }
-        mongo.db.characters.insert_one(character)
-        flash("A new Hero has entered the tavern!")
-        return redirect(url_for("profile"))
+    return render_template("create.html")
 
 
-    races = mongo.db.races
-    races_list = races.find().sort("race_name", 1)
-
-    classes = mongo.db.classes
-    classes_list = classes.find().sort("class_name", 1)
-
-    return render_template("create.html", races_list=races_list, classes_list=classes_list)
-
-
-@app.route("/edit.html/<character_id>", methods=['GET', 'POST'])
-def edit(character_id):
-    if request.method == "POST":
-        character = {
-            "character_name": request.form.get("character_name"),
-            "character_race": request.form.get("character_race"),
-            "character_class": request.form.get("character_class"),
-            "character_likes": request.form.get("character_likes"),
-            "character_dislikes": request.form.get("character_dislikes"),
-            "character_bio": request.form.get("character_bio"),
-            "character_user": session["user"]
-        }
-        mongo.db.characters.update({"_id": ObjectId(character_id)}, character)
-
-    character = mongo.db.characters
-    character_edit = character.find_one({"_id": ObjectId(character_id)})
-    races = mongo.db.races
-    races_list = races.find().sort("race_name", 1)
-    classes = mongo.db.classes
-    classes_list = classes.find().sort("class_name", 1)
-    return render_template("edit.html", character_edit=character_edit, races_list=races_list, classes_list=classes_list)
+@app.route("/edit.html", methods=["GET", "POST"])
+def edit():
+    return render_template("edit.html")
 
 
 @app.route("/profile.html", methods=["GET", "POST"])
 def profile():
-    if session.get("user"):
-        characters = mongo.db.characters
-        characters_list = characters.find().sort("character_name", 1)
-        print(characters_list)
-        #made_by_user = list(characters.find({"character_user": "session['user']"}))
-        
-        
-            
-        return render_template("profile.html", username=session["user"])
-
     return redirect(url_for("landing"))
 
 
 @app.route("/logout")
 def logout():
-    flash("You have been logged out")
-    session.pop("user")
     return redirect(url_for("landing"))
 
 
 @app.route("/tavern.html")
 def tavern():
-    characters = list(mongo.db.characters.find())
-    return render_template("tavern.html", characters=characters)
+    return render_template("tavern.html")
 
 
 if __name__ == "__main__":
