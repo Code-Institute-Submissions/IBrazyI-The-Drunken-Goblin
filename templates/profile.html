@@ -18,7 +18,8 @@
                 <div class="">{{ character.character_likes }}</div>
                 <div class="">{{ character.character_dislikes }}</div>
                 <div class="">{{ character.character_bio }}</div>
-                <div class=""><i class=""></i></div>
+                <div class=""><a class="" href="{{ url_for('edit', character_id=character._id) }}">Edit Hero</a></div>
+                <div class=""><a class="" href="{{ url_for('delete', character_id=character._id) }}">Delete Hero</a></div>
             </div>
         {% endif %}
     {% endfor %}

@@ -147,6 +147,8 @@ def tavern():
 
     return render_template('tavern.html', characters=characters)
 
+
+
 # App Routes that require REDIRECT
 
 
@@ -156,6 +158,12 @@ def logout():
     session.pop("user")
 
     return redirect(url_for('landing'))
+
+@app.route("/delete/<character_id>")
+def delete(character_id):
+    mongo.db.characters.remove({"_id": ObjectId(character_id)})
+    flash("Category Successfully Deleted")
+    return redirect(url_for('profile'))
 
 
 if __name__ == "__main__":

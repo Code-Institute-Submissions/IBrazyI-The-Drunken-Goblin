@@ -15,13 +15,16 @@
 
     <header>
         <div class="">
+          <a href="{{ url_for('landing') }}" class="">Login</a>
           <a href="{{ url_for('tavern') }}" class="">Enter the Tavern.</a>
-          <a href="{{ url_for('create') }}">Create</a>
-          <a href="{{ url_for('profile') }}">Profile</a>
-          <a href="{{ url_for('logout') }}">Logout</a>
           <a href="{{ url_for('register') }}">Register</a>
           {% if session.user %}
-            <a href="{{ url_for('edit', character_id=null) }}">Edit</a>
+          <a href="{{ url_for('profile') }}">Profile</a>
+          {% endif %}
+          {% if session.user %}
+          <a href="{{ url_for('create') }}">Create</a>
+          <a href="{{ url_for('edit', character_id=null) }}">Edit</a>
+          <a href="{{ url_for('logout') }}">Logout</a>
           {% endif %}
         </div>
     </header>
