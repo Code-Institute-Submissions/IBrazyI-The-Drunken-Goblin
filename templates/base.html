@@ -20,7 +20,9 @@
           <a href="{{ url_for('profile') }}">Profile</a>
           <a href="{{ url_for('logout') }}">Logout</a>
           <a href="{{ url_for('register') }}">Register</a>
-          <a href="{{ url_for('edit') }}">Edit</a>
+          {% if session.user %}
+            <a href="{{ url_for('edit', character_id=null) }}">Edit</a>
+          {% endif %}
         </div>
     </header>
 
