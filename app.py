@@ -120,7 +120,7 @@ def edit(character_id):
             "character_likes": request.form.get("character_likes"),
             "character_dislikes": request.form.get("character_dislikes"),
             "character_bio": request.form.get("character_bio"),
-            "character_user": request.form.get("character_user")
+            "character_user": session['user']
         }
 
         mongo.db.characters.replace_one(character, new_character)
