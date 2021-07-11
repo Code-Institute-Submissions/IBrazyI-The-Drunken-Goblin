@@ -23,7 +23,6 @@
           {% endif %}
           {% if session.user %}
           <a href="{{ url_for('create') }}">Create</a>
-          <a href="{{ url_for('edit', character_id=null) }}">Edit</a>
           <a href="{{ url_for('logout') }}">Logout</a>
           {% endif %}
         </div>
