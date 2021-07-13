@@ -8,7 +8,7 @@
             <label for="query">Search Characters</label>
         </div>
         <div class="col s12 m4">
-            <a href="{{ url_for('tavern') }}"></a>
+            <a href="{{ url_for('tavern') }}">Clear</a>
             <button type="submit" class="">
                 <i class="fas fa-search">Search</i>
             </button>
@@ -25,22 +25,26 @@
     <div class=""><h3>Backstory</h3></div>
     <div class=""><h3>Favourite</h3></div>
 </div>
-{% for character in characters %}
-    <div class="">
-        <div class="">This will be an image</div>
-        <div class="">{{ character.character_name }}</div>
-        <div class="">{{ character.character_race }}</div>
-        <div class="">{{ character.character_class }}</div>
-        <div class="">{{ character.character_likes }}</div>
-        <div class="">{{ character.character_dislikes }}</div>
-        <div class="">{{ character.character_bio }}</div>
-        <div class=""><a class="fas fa-heart-broken" href="{{ url_for('removesavecharacter', character_id=character._id) }}">Unsave Character</a></div>
-        <div class=""><a class="fas fa-heart" href="{{ url_for('savecharacter', character_id=character._id) }}">Save Character</a></div>
-        {% if character.character_user == session.user %}
-            <div class=""><a class="" href="{{ url_for('edit', character_id=character._id) }}">Edit Hero</a></div>
-            <div class=""><a class="" href="{{ url_for('delete', character_id=character._id) }}">Delete Hero</a></div>
-        {% endif %}
-    </div>
-{% endfor %}
+{% if character|length > 0 %}
+    {% for character in characters %}
+        <div class="">
+            <div class="">This will be an image</div>
+            <div class="">{{ character.character_name }}</div>
+            <div class="">{{ character.character_race }}</div>
+            <div class="">{{ character.character_class }}</div>
+            <div class="">{{ character.character_likes }}</div>
+            <div class="">{{ character.character_dislikes }}</div>
+            <div class="">{{ character.character_bio }}</div>
+            <div class=""><a class="fas fa-heart-broken" href="{{ url_for('removesavecharacter', character_id=character._id) }}">Unsave Character</a></div>
+            <div class=""><a class="fas fa-heart" href="{{ url_for('savecharacter', character_id=character._id) }}">Save Character</a></div>
+            {% if character.character_user == session.user %}
+                <div class=""><a class="" href="{{ url_for('edit', character_id=character._id) }}">Edit Hero</a></div>
+                <div class=""><a class="" href="{{ url_for('delete', character_id=character._id) }}">Delete Hero</a></div>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% else %}
+        <h3>There appears to be no one in the tavern going by that name.</h3>
+{% endif %}
 
 {% endblock %}
