@@ -6,6 +6,7 @@ from flask import (
     Flask, flash, render_template, redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from pymongo.message import query
 from werkzeug.security import generate_password_hash, check_password_hash
 import pymongo
 import cloudinary
@@ -49,6 +50,8 @@ def landing():
             return redirect(url_for('landing')) 
 
     return render_template(url_for('landing'))
+
+
 
 
 @app.route("/register.html", methods=["GET", "POST"])
@@ -149,7 +152,13 @@ def tavern():
 
     return render_template('tavern.html', characters=characters, user=user)
 
+@app.route("/search", methods=["GET","POST"])
+def search():
+    query= request.form.get("query")
+    characters = mongo.db.characters.find({"$text": {"$search": query }})
+    user = mongo.db.users.find()
 
+    return render_template("tavern.html", characters=characters, user=user)
 
 # App Routes that require REDIRECT
 
