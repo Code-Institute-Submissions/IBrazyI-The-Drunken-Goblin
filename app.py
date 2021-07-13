@@ -172,22 +172,35 @@ def savecharacter(character_id):
 
     character_info = mongo.db.characters.find_one({"_id": ObjectId(character_id)})
     character_name = character_info["character_name"]
-    
+    print(character_name)
+
     user = mongo.db.users.find_one({"username": session['user']})
     user_id = user["_id"]
-    saved_characters = user["saved_characters"]
-    for contains in saved_characters:
-        if contains == character_name:
-            return redirect(url_for('tavern', contains=contains))
-        else:
-            mongo.db.users.update_one(
-                {"_id": user_id},
-                { "$push": {"saved_characters": character_name} }
-            )
-    return redirect(url_for('tavern', contains=contains))
+    user_characters = user["saved_characters"]
+    print(user_characters)
+    
+    if character_name != user_characters:
+        mongo.db.users.update_one(
+            {"_id": user_id},
+            { "$push": {"saved_characters": character_name}}
+        )
+        user_characters = user["saved_characters"]
+        return redirect(url_for('tavern', character_name=character_name, user_characters=user_characters))
     
 @app.route("/removesavecharacter/<character_id>")
-def removesavecharacter():
+def removesavecharacter(character_id):
+
+    character_info = mongo.db.characters.find_one({"_id": ObjectId(character_id)})
+    character_name = character_info["character_name"]
+
+    user = mongo.db.users.find_one({"username": session['user']})
+    user_id = user["_id"]
+
+    mongo.db.users.update_one(
+        {"_id": user_id},
+        { "$pull": {"saved_characters": character_name} }
+    )
+
     return redirect(url_for('tavern'))
 
 if __name__ == "__main__":
