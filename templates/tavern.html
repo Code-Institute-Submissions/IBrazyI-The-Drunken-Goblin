@@ -19,7 +19,11 @@
         <div class="">{{ character.character_likes }}</div>
         <div class="">{{ character.character_dislikes }}</div>
         <div class="">{{ character.character_bio }}</div>
-        <div class=""><i class=""></i></div>
+        {% if contains == character.character_name  %}
+            <div class=""><a class="fas fa-heart" href="{{ url_for('removesavecharacter', character_id=character._id) }}"></a></div>
+        {% else %}
+            <div class=""><a class="far fa-heart" href="{{ url_for('savecharacter', character_id=character._id) }}"></a></div>
+        {% endif %}
         {% if character.character_user == session.user %}
             <div class=""><a class="" href="{{ url_for('edit', character_id=character._id) }}">Edit Hero</a></div>
             <div class=""><a class="" href="{{ url_for('delete', character_id=character._id) }}">Delete Hero</a></div>

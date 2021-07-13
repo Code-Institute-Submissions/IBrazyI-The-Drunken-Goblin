@@ -1,3 +1,4 @@
+from hashlib import new
 from logging import debug
 import os
 import re
@@ -144,8 +145,9 @@ def profile():
 def tavern():
 
     characters = mongo.db.characters.find()
+    user = mongo.db.users.find()
 
-    return render_template('tavern.html', characters=characters)
+    return render_template('tavern.html', characters=characters, user=user)
 
 
 
@@ -165,6 +167,28 @@ def delete(character_id):
     flash("Category Successfully Deleted")
     return redirect(url_for('profile'))
 
+@app.route("/savecharacter/<character_id>")
+def savecharacter(character_id):
+
+    character_info = mongo.db.characters.find_one({"_id": ObjectId(character_id)})
+    character_name = character_info["character_name"]
+    
+    user = mongo.db.users.find_one({"username": session['user']})
+    user_id = user["_id"]
+    saved_characters = user["saved_characters"]
+    for contains in saved_characters:
+        if contains == character_name:
+            return redirect(url_for('tavern', contains=contains))
+        else:
+            mongo.db.users.update_one(
+                {"_id": user_id},
+                { "$push": {"saved_characters": character_name} }
+            )
+    return redirect(url_for('tavern', contains=contains))
+    
+@app.route("/removesavecharacter/<character_id>")
+def removesavecharacter():
+    return redirect(url_for('tavern'))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
