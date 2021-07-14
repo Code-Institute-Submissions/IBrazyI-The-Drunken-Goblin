@@ -2,59 +2,61 @@
     {% block content %}
 
 
-    <div class="">
-        <div class="">
-            <div class="">
-                <div class="">
-                    <h1 class="">The Drunken Goblin</h1>
+    <div class="row valign-wrapper">
+        <div class="background">
+            <div class="row">
+                <div class="col s12">
+                    <h1 class="center">The Drunken Goblin</h1>
                 </div>
-                <div class="">
-                    <p class="">Struggling to create a Hero for your next campaign? Always tend to create the same types of Heroes?</p>
-                    <p class="">The Drunken Goblin is the place for you, its a database containing Heroes from other users and campaigns. Allowing anyone to quickley find a Hero to suite thier needs, be that by class, race, likes and dislikes.</p>
+                <div class="col s12">
+                    <p class="center">Struggling to create a Hero for your next campaign? Always tend to create the same types of Heroes?</p>
+                    <p class="center">The Drunken Goblin is the place for you, its a database containing Heroes from other users and campaigns. Allowing anyone to quickley find a Hero to suite thier needs, be that by class, race, likes and dislikes.</p>
                 </div>
-                <div class="">
-                    <a class="" href="{{ url_for('tavern') }}">Meet your Heroes!</a>
-                </div>
+            </div>
+            <div class="row center">
+                <a class="waves-effect waves-light btn-large" href="{{ url_for('tavern') }}">Meet your Heroes!</a>
             </div>
         </div>
     </div>
 
-    <div class="">
-        <div class="">
-            <div class="">
-                <h2 class="">Tired of seeing the same old heroes?</h2>
+    <div class="row valign-wrapper">
+        <div class="background">
+            <div class="col s12">
+                <h2 class="center">Tired of seeing the same old heroes?</h2>
             </div>
-            <div class=""></div>
-            <div class="">
-                <p class="">Add some of your own heroes to the roster! All you need to do is create an account!</p>
+            <div class="spacer"></div>
+            <div class="col s12">
+                <p class="center">Add some of your own heroes to the roster! All you need to do is create an account!</p>
             </div>
         </div>
     </div>
 
 
-    <div class="">
-        <div class="">
-            <form class="" method="POST" action="{{ url_for('landing') }}">
-                <div class="">
-                    <div class="">
-                        <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+    <div class="section">
+        <div class="background">
+            <form class="form_styling" method="POST" action="{{ url_for('landing') }}">
+                <div class="row">
+                    <div class="col s8 offset-s2">
+                        <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate " required>
                         <label for="username">Username</label>
                     </div>
                 </div>
-                <div class="">
-                    <div class="">
+                <div class="row">
+                    <div class="col s8 offset-s2 ">
                         <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="password">Password</label>
                     </div>
                 </div>
-                <div class="">
-                    <button type="submit" class="">
+                <div class="row center">
+                    <button type="submit" class="waves-effect waves-light btn-large">
                         Login!
                     </button>
                 </div>
-                <div class="">
-                    <p class="">Do you want to register?</p>
-                    <a class="" href="{{ url_for('register') }}">Register!</a>
+                <div class="row">
+                    <p class="center">Do you want to register?</p>
+                </div>
+                <div class="row center">
+                    <a class="waves-effect waves-light btn-large" href="{{ url_for('register') }}">Register!</a>
                 </div>
             </form>
         </div>

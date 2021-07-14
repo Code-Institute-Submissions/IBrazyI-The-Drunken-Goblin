@@ -139,8 +139,15 @@ def edit(character_id):
 def profile():
 
     usercharacters = mongo.db.characters.find()
+    data_characters = mongo.db.characters.find()
+    current_user = mongo.db.users.find_one({"username": session['user']})
+    saved_characters = current_user["saved_characters"]
+    for saved in saved_characters:
+        print(saved)
 
-    return render_template(url_for('profile'), usercharacters=usercharacters)
+    
+
+    return render_template(url_for('profile'), usercharacters=usercharacters, data_characters=data_characters, saved_characters=saved_characters)
     
 
 

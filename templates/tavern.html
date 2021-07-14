@@ -25,8 +25,9 @@
     <div class=""><h3>Backstory</h3></div>
     <div class=""><h3>Favourite</h3></div>
 </div>
-{% if character|length > 0 %}
-    {% for character in characters %}
+
+{% for character in characters %}
+    {% if character|length > 0 %}
         <div class="">
             <div class="">This will be an image</div>
             <div class="">{{ character.character_name }}</div>
@@ -42,9 +43,10 @@
                 <div class=""><a class="" href="{{ url_for('delete', character_id=character._id) }}">Delete Hero</a></div>
             {% endif %}
         </div>
-    {% endfor %}
-{% else %}
+    {% else %}
         <h3>There appears to be no one in the tavern going by that name.</h3>
-{% endif %}
+    {% endif %}
+{% endfor %}
+
 
 {% endblock %}

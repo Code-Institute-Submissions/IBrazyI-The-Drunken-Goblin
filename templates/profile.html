@@ -23,8 +23,23 @@
             </div>
         {% endif %}
     {% endfor %}
+    
 </div>
 <div class="">
-    <p>This will show the heroes you favourited!</p>
+    {% for character in data_characters %}
+    {% for chars in saved_characters %}
+        {% if character == chars %}
+        <div class="">
+            <div class="">This will be an image</div>
+            <div class="">{{ character.character_name }}</div>
+            <div class="">{{ character.character_race }}</div>
+            <div class="">{{ character.character_class }}</div>
+            <div class="">{{ character.character_likes }}</div>
+            <div class="">{{ character.character_dislikes }}</div>
+            <div class="">{{ character.character_bio }}</div>
+        </div>
+        {% endif %}
+    {% endfor %}
+    {% endfor %}
 </div>
 {% endblock %}
