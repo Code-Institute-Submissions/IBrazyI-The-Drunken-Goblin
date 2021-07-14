@@ -20,8 +20,20 @@ footer {
     padding: 0px;
 }
 
+/* Tavern */
+
+.form-container {
+    margin-top: 20px;
+}
+
+.search-box {
+    margin-bottom: 20px;
+    box-shadow: 1px 2px 1px 2px; 
+}
+
 .tavern_characters {
     margin-bottom: 20px;
+    padding: 10px 0px 10px 0px;
     border: 1px solid black;
     box-shadow: 1px 2px 1px 2px;
 }
@@ -30,3 +42,4 @@ footer {
     border-bottom: 1px solid black;
     margin-bottom: 10px;
 }
+
