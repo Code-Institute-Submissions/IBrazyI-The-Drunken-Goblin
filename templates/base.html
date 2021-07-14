@@ -14,18 +14,38 @@
 <body>
 
     <header>
-        <div class="">
-          <a href="{{ url_for('landing') }}" class="">Login</a>
-          <a href="{{ url_for('tavern') }}" class="">Enter the Tavern.</a>
-          <a href="{{ url_for('register') }}">Register</a>
-          {% if session.user %}
-          <a href="{{ url_for('profile') }}">Profile</a>
-          {% endif %}
-          {% if session.user %}
-          <a href="{{ url_for('create') }}">Create</a>
-          <a href="{{ url_for('logout') }}">Logout</a>
-          {% endif %}
+      <nav>
+        <div class="nav-wrapper valign-wrapper">
+          <a href="#" class=" brand-logo center fas fa-beer"></a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="{{ url_for('landing') }}" class="">Login</a></li>
+            <li><a href="{{ url_for('tavern') }}" class="">Enter the Tavern.</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% if session.user %}
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            {% endif %}
+            {% if session.user %}
+            <li><a href="{{ url_for('create') }}">Create</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% endif %}
+          </ul>
         </div>
+      </nav>
+
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="{{ url_for('landing') }}" class="">Login</a></li>
+        <li><a href="{{ url_for('tavern') }}" class="">Enter the Tavern.</a></li>
+        <li><a href="{{ url_for('register') }}">Register</a></li>
+        {% if session.user %}
+        <li><a href="{{ url_for('profile') }}">Profile</a></li>
+        {% endif %}
+        {% if session.user %}
+        <li><a href="{{ url_for('create') }}">Create</a></li>
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% endif %}
+      </ul>
+
     </header>
 
       <main>
