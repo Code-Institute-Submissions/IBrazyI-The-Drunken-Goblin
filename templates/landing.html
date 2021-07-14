@@ -2,8 +2,8 @@
     {% block content %}
 
 
-    <div class="section valign-wrapper">
-        <div class="background-image-patrons">
+    <div class="section background-image-patrons valign-wrapper">
+        <div class="faded-background white-text">
             <div class="row">
                 <div class="col s12">
                     <h1 class="center">The Drunken Goblin</h1>
@@ -19,49 +19,56 @@
         </div>
     </div>
 
-    <div class="section valign-wrapper">
-        <div class="background">
-            <div class="row">
-                <div class="col s12">
-                    <h2 class="center">Tired of using the same old Heroes?</h2>
-                </div>
-                <div class="col s12">
-                    <p class="center">Register and add your own Heros to the tavern so other people can use them on their adventures!</p>
-                </div>
+    <div class="section grey lighten-2 white text ">
+        <div class="row">
+            <div class="character_divider col s8 offset-s2"></div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <h2 class="center">Tired of using the same old Heroes?</h2>
             </div>
-            <div class="row center">
-                <a class="waves-effect waves-light btn-large" href="{{ url_for('register') }}">Register!</a>
+            <div class="col s12">
+                <p class="center">Register and add your own Heros to the tavern so other people can use them on their adventures!</p>
             </div>
         </div>
+        <div class="row center">
+            <a class="waves-effect waves-light btn-large" href="{{ url_for('register') }}">Register!</a>
+        </div>
+        <div class="row">
+            <div class="character_divider col s8 offset-s2"></div>
+        </div>
+        
     </div>
 
 
-    <div class="section">
-        <div class="background-image-empty">
+    <div class="section background-image-empty">
+        <div class="faded-background white-text">
             <div class="row">
                 <div class="col s12">
                     <h3 class="center">Already have an account? Dont forget to Log In!</h3>
                 </div>
             </div>
-            <form class="form_styling" method="POST" action="{{ url_for('landing') }}">
-                <div class="row">
-                    <div class="col s8 offset-s2">
-                        <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate " required>
-                        <label for="username">Username</label>
+            <div class="row">
+                <form class="" method="POST" action="{{ url_for('landing') }}">
+                    <div class="row">
+                        <div class="col s8 m4 offset-s2 offset-m4">
+                            <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate " required>
+                            <label for="username">Username</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col s8 offset-s2 ">
-                        <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                        <label for="password">Password</label>
+                    <div class="row">
+                        <div class="col s8 m4 offset-s2 offset-m4">
+                            <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                            <label for="password">Password</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row center">
-                    <button type="submit" class="waves-effect waves-light btn-large">
-                        Login!
-                    </button>
-                </div>
-            </form>
+                    <div class="row center">
+                        <button type="submit" class="waves-effect waves-light btn-large">
+                            Login!
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 

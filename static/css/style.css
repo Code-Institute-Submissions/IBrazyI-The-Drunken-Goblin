@@ -10,6 +10,11 @@ body {
     max-height: 100vh;
 }
 
+section {
+    margin: 0px;
+    padding: 0px;
+}
+
 header {
     margin: 0px;
     padding: 0px;
@@ -18,6 +23,27 @@ header {
 footer {
     margin: 0px;
     padding: 0px;
+}
+
+/* Landing */
+
+.background-image-patrons {
+    background-image: url(/static/images/patrons.jpg);
+    background-position: center;
+    background-clip: border-box;
+    background-size: cover;
+}
+
+.background-image-empty {
+    background-image: url(/static/images/empty.jpg);
+    background-position: center;
+    background-clip: border-box;
+    background-size: cover; 
+}
+
+.faded-background {
+    box-sizing: content-box;
+    background-color: rgba(0, 0, 0, 0.37);
 }
 
 /* Tavern */
@@ -43,3 +69,8 @@ footer {
     margin-bottom: 10px;
 }
 
+/* Profile */
+
+/* Register */
+
+/* Create */
