@@ -48,13 +48,20 @@ footer {
 
 /* Tavern */
 
+.background-image-tavern {
+    background-image: url(/static/images/tavern.jpg);
+    background-position: center;
+    background-clip: border-box;
+    background-size: cover;
+}
+
+
 .form-container {
     margin-top: 20px;
 }
 
 .search-box {
-    margin-bottom: 20px;
-    box-shadow: 1px 2px 1px 2px; 
+    margin-bottom: 20px; 
 }
 
 .tavern_characters {
