@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="">
+<div class="row">
     <form action="{{ url_for('search') }}" method="POST" class="cols12">
         <div class="row valign-wrapper col s12 m4">
             <i class="fas fa-search"></i>
@@ -15,7 +15,7 @@
         </div>
     </form>
 </div>
-<div class="">
+<div class="row valign-wrapper hide-on-med-and-down">
     <div class=""><h3>Portrait</h3></div>
     <div class=""><h3>Name</h3></div>
     <div class=""><h3>Race</h3></div>
@@ -28,19 +28,20 @@
 
 {% for character in characters %}
     {% if character|length > 0 %}
-        <div class="">
-            <div class="">This will be an image</div>
-            <div class="">{{ character.character_name }}</div>
-            <div class="">{{ character.character_race }}</div>
-            <div class="">{{ character.character_class }}</div>
-            <div class="">{{ character.character_likes }}</div>
-            <div class="">{{ character.character_dislikes }}</div>
-            <div class="">{{ character.character_bio }}</div>
-            <div class=""><a class="fas fa-heart-broken" href="{{ url_for('removesavecharacter', character_id=character._id) }}">Unsave Character</a></div>
-            <div class=""><a class="fas fa-heart" href="{{ url_for('savecharacter', character_id=character._id) }}">Save Character</a></div>
+        <div class="row">
+            <div class="col s8 offset-s2 center">This will be an image</div>
+            <div class="col s8 offset-s2"><span class="hide-on-med-and-up">Name: </span>{{ character.character_name }}</div>
+            <div class="col s8 offset-s2"><span class="hide-on-med-and-up">Race: </span>{{ character.character_race }}</div>
+            <div class="col s8 offset-s2"><span class="hide-on-med-and-up">Class: </span>{{ character.character_class }}</div>
+            <div class="col s8 offset-s2"><span class="hide-on-med-and-up">Likes: </span>{{ character.character_likes }}</div>
+            <div class="col s8 offset-s2"><span class="hide-on-med-and-up">Dislikes: </span>{{ character.character_dislikes }}</div>
+            <div class="col s8 offset-s2"><span class="hide-on-med-and-up">Bio: </span>{{ character.character_bio }}</div>
+            <div class="col s6 center"><a class="fas fa-heart-broken" href="{{ url_for('removesavecharacter', character_id=character._id) }}">Unsave Character</a></div>
+            <div class="col s6 center"><a class="fas fa-heart" href="{{ url_for('savecharacter', character_id=character._id) }}">Save Character</a></div>
+        <div class="row center-align">
             {% if character.character_user == session.user %}
-                <div class=""><a class="" href="{{ url_for('edit', character_id=character._id) }}">Edit Hero</a></div>
-                <div class=""><a class="" href="{{ url_for('delete', character_id=character._id) }}">Delete Hero</a></div>
+                <div class="col s6"><a class="waves-effect waves-light btn-small" href="{{ url_for('edit', character_id=character._id) }}">Edit Hero</a></div>
+                <div class="col s6"><a class="waves-effect waves-light btn-small" href="{{ url_for('delete', character_id=character._id) }}">Delete Hero</a></div>
             {% endif %}
         </div>
     {% else %}

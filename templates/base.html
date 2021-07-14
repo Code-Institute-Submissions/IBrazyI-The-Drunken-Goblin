@@ -19,7 +19,9 @@
           <a href="#" class=" brand-logo center fas fa-beer"></a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
           <ul class="right hide-on-med-and-down">
+            {% if session.user == null %}
             <li><a href="{{ url_for('landing') }}" class="">Login</a></li>
+            {% endif %}
             <li><a href="{{ url_for('tavern') }}" class="">Enter the Tavern.</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
             {% if session.user %}
