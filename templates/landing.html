@@ -2,7 +2,7 @@
     {% block content %}
 
 
-    <div class="row valign-wrapper">
+    <div class="section valign-wrapper">
         <div class="background">
             <div class="row">
                 <div class="col s12">
@@ -19,14 +19,18 @@
         </div>
     </div>
 
-    <div class="row valign-wrapper">
+    <div class="section valign-wrapper">
         <div class="background">
-            <div class="col s12">
-                <h2 class="center">Tired of seeing the same old heroes?</h2>
+            <div class="row">
+                <div class="col s12">
+                    <h2 class="center">Tired of using the same old Heroes?</h2>
+                </div>
+                <div class="col s12">
+                    <p class="center">Register and add your own Heros to the tavern so other people can use them on their adventures!</p>
+                </div>
             </div>
-            <div class="spacer"></div>
-            <div class="col s12">
-                <p class="center">Add some of your own heroes to the roster! All you need to do is create an account!</p>
+            <div class="row center">
+                <a class="waves-effect waves-light btn-large" href="{{ url_for('register') }}">Register!</a>
             </div>
         </div>
     </div>
@@ -34,6 +38,11 @@
 
     <div class="section">
         <div class="background">
+            <div class="row">
+                <div class="col s12">
+                    <h3 class="center">Already have an account? Dont forget to Log In!</h3>
+                </div>
+            </div>
             <form class="form_styling" method="POST" action="{{ url_for('landing') }}">
                 <div class="row">
                     <div class="col s8 offset-s2">
@@ -51,12 +60,6 @@
                     <button type="submit" class="waves-effect waves-light btn-large">
                         Login!
                     </button>
-                </div>
-                <div class="row">
-                    <p class="center">Do you want to register?</p>
-                </div>
-                <div class="row center">
-                    <a class="waves-effect waves-light btn-large" href="{{ url_for('register') }}">Register!</a>
                 </div>
             </form>
         </div>
