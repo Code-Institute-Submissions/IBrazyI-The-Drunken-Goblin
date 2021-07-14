@@ -88,4 +88,11 @@ footer {
 
 /* Register */
 
+.background-image-register {
+    background-image: url(/static/images/register.jpg);
+    background-position: center;
+    background-clip: border-box;
+    background-size: cover;
+}
+
 /* Create */
