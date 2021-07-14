@@ -1,31 +1,49 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Welcome to your table {{ session['user'] }}</h1>
-
-<div class="">
-    <div class="">
-        <a class="" href="{{ url_for('create') }}">Create a new Hero?</a>
+<div class="row valign-wrapper">
+    <div class="col s8 offset-s2 center">
+        <h2>Welcome to your Table {{ session['user'] }}</h2>
+    </div>
+</div>  
+<div class="row valign-wrapper">
+    <div class="col s8 offset-s2 center">
+        <p>Welcome to your Table. Here you can create new characters to share with other users.</p> 
+        <p>Edit characters you have made and even see other peoples characters that you have saved!</p>
+        <a class="waves-effect waves-light btn-small" href="{{ url_for('create') }}">Create a new Hero?</a>
     </div>    
 </div>
-<div class="">
+<div class="row valign-wrapper hide-on-med-and-down center-align">
+    <div class="col s10 offset-s1">
+        <div class="col m3"><h4>Portrait</h4></div>
+        <div class="col m1"><h4>Name</h4></div>
+        <div class="col m1"><h4>Race</h4></div>
+        <div class="col m1"><h4>Class</h4></div>
+        <div class="col m1"><h4>Likes</h4></div>
+        <div class="col m1"><h4>Dislikes</h4></div>
+        <div class="col m2"><h4>Backstory</h4></div>
+        <div class="col m2"><h4>Edit/Delete</h4></div>
+    </div>
+</div>
     {% for character in usercharacters %}
         {% if character.character_user == session.user %}
-            <div class="">
-                <div class="">This will be an image</div>
-                <div class="">{{ character.character_name }}</div>
-                <div class="">{{ character.character_race }}</div>
-                <div class="">{{ character.character_class }}</div>
-                <div class="">{{ character.character_likes }}</div>
-                <div class="">{{ character.character_dislikes }}</div>
-                <div class="">{{ character.character_bio }}</div>
-                <div class=""><a class="" href="{{ url_for('edit', character_id=character._id) }}">Edit Hero</a></div>
-                <div class=""><a class="" href="{{ url_for('delete', character_id=character._id) }}">Delete Hero</a></div>
+        <div class="row center-align">
+            <div class="col s10 offset-s1 tavern_characters grey darken-1 white-text">
+                <div class="row">
+                    <div class="col s8 m3 offset-s2 center">This will be an image</div>
+                    <div class="col s8 m1 offset-s2"><span class="hide-on-med-and-up">Name: </span>{{ character.character_name }}</div>
+                    <div class="col s8 m1 offset-s2"><span class="hide-on-med-and-up">Race: </span>{{ character.character_race }}</div>
+                    <div class="col s8 m1 offset-s2"><span class="hide-on-med-and-up">Class: </span>{{ character.character_class }}</div>
+                    <div class="col s8 m1 offset-s2"><span class="hide-on-med-and-up">Likes: </span>{{ character.character_likes }}</div>
+                    <div class="col s8 m1 offset-s2"><span class="hide-on-med-and-up">Dislikes: </span>{{ character.character_dislikes }}</div>
+                    <div class="col s8 m2 offset-s2"><span class="hide-on-med-and-up">Bio: </span>{{ character.character_bio }}</div>
+                    <div class="col s6 m1 center"><a class="waves-effect waves-light btn-small" href="{{ url_for('edit', character_id=character._id) }}">Edit</a></div>
+                    <div class="col s6 m1 center"><a class="waves-effect waves-light btn-small" href="{{ url_for('delete', character_id=character._id) }}">Delete</a></div>
+                </div>
             </div>
+        </div>
         {% endif %}
     {% endfor %}
-    
-</div>
-<div class="">
+
     {% for character in data_characters %}
     {% for chars in saved_characters %}
         {% if character == chars %}
@@ -41,5 +59,5 @@
         {% endif %}
     {% endfor %}
     {% endfor %}
-</div>
+
 {% endblock %}
