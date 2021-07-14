@@ -3,9 +3,10 @@
 
 
 
-<div class="row form-container">
-    <div class="background-image-tavern">
-        <form action="{{ url_for('search') }}" method="POST" class="col s12 m6 offset-m6 faded-background white-text">
+<div class="row">
+    <div class="background-image-tavern white-text">
+        <div class="form-container faded-background">
+        <form action="{{ url_for('search') }}" method="POST" class="col s12 m6 offset-m6">
             <div class="row">
                 <div class="col s8  offset-s2  search-box center">
                     <input type="text" placeholder="Search" name="query" id="query" class="center validate" required>
@@ -20,13 +21,18 @@
                 </div>
             </div>
         </form>
+        <div class="row">
+            <div class="col s10 offset-s1 center">
+            <h4>Welcome to the Tavern!</h4>
+            <p>Here you can see all the Heroes currently inside. If you know who your looking for, or know what type of Hero you need dont be afraid to search for them!</p>
+            </div>
+        </div>
     </div>
 </div>
 
 <div class="row">
-    <div class="col s10 offset-s1 center">
-    <h4>Welcome to the Tavern!</h4>
-    <p>Here you can see all the Heroes currently inside. If you know who your looking for, or know what type of Hero you need dont be afraid to search for them!</p>
+    <div class="col s8 offset-s2">
+        <div class="character_divider"></div>
     </div>
 </div>
 
