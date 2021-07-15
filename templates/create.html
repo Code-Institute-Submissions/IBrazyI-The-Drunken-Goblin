@@ -1,60 +1,75 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Create Hero</h1>
 
-<div class="">
-    <form class="" method="POST" action="{{ url_for('create') }}">
-        <div class="">
-            <div class="">
-            <input placeholder="Character Name" name="character_name" id="character_name" type="text">
-            <label for="character_name">Character Name</label>
-            </div>
+<div class="row">
+  <div class="background-image-create white-text">
+    <div class="faded-background">
+
+      <div class="row">
+        <div class="col s8 offset-s2 center">
+          <h1>Create Hero</h1>
         </div>
-        <div class="">
-            <select id="character_race" name="character_race" class="validate" required>
-              <option value="" disabled selected>Choose a race</option>
-              {% for races in races_list %}
-                <option value="{{ races.race_name }}">{{ races.race_name }}</option>
-              {% endfor %}
-            </select>
-            <label>Race</label>
-          </div>
-          <div class="">
-            <select id="character_class" name="character_class" class="validate" required>
-              <option value="" disabled selected>Choose a class</option>
-              {% for classes in classes_list %}
-                <option value="{{ classes.class_name }}">{{ classes.class_name }}</option>
-              {% endfor %} 
-            </select>
-            <label>Class</label>
-          </div>
-          <div class="">
-            <div class="">
-            <input placeholder="Likes" name="character_likes" id="character_likes" type="text">
-            <label for="character_likes">Likes</label>
+      </div>
+
+      <div class="row">
+        <form class="form-style white-text" method="POST" action="{{ url_for('create') }}">
+
+          <div class="row">
+            <div class="col s8 m4 offset-s2 offset-m4 center">
+              <input class="white-text" placeholder="Character Name" name="character_name" id="character_name" type="text">
             </div>
-        </div>
-        <div class="">
-            <div class="">
-            <input placeholder="Dislikes" name="character_dislikes" id="character_dislikes" type="text">
-            <label for="character_dislikes">Dislikes</label>
-            </div>
-        </div>
-        <div class="">
-            <form class="">
-              <div class="">
-                <div class="">
-                  <textarea id="character_bio" name="character_bio" maxlength="250" type="text" class="materialize-textarea"></textarea>
-                  <label for="character_bio">Bio</label>
-                </div>
-              </div>
-              <div class="">
-                <div class="">
-                  <button type="submit" class="" href="{{ url_for('profile') }}">Welcome new Hero!</button>
-                </div>
-              </div>
-            </form>
           </div>
-    </form>
+
+          <div class="row">
+            <div class="input-field col s8 m4 offset-s2 offset-m4 center">
+              <select id="character_race" name="character_race" class="white-text validate" required>
+                <option class="white-text" value="" disabled selected>Choose a race</option>
+                {% for races in races_list %}
+                  <option class="white-text" value="{{ races.race_name }}">{{ races.race_name }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input field col s8 m4 offset-s2 offset-m4 center">
+              <select id="character_class" name="character_class" class="validate" required>
+                <option value="" disabled selected>Choose a class</option>
+                {% for classes in classes_list %}
+                  <option value="{{ classes.class_name }}">{{ classes.class_name }}</option>
+                {% endfor %} 
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s8 m4 offset-s2 offset-m4 center">
+              <input placeholder="Likes" name="character_likes" id="character_likes" class="white-text" type="text">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s8 m4 offset-s2 offset-m4 center">
+              <input placeholder="Dislikes" name="character_dislikes" id="character_dislikes" class="white-text" type="text">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s8 m4 offset-s2 offset-m4 center">
+              <textarea placeholder="Bio" id="character_bio" name="character_bio" maxlength="250" type="text" class="white-text materialize-textarea"></textarea>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s8 m4 offset-s2 offset-m4 center">
+              <button type="submit" class="waves-effect waves-light btn-large" href="{{ url_for('profile') }}">Welcome new Hero!</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
 </div>
 {% endblock %}
