@@ -46,8 +46,8 @@ their own characters, edit and remove them. But also contains a place where all 
 
 
 ### Strategy
-- The aim of the website is to provide the user with an interesting game experience that is fun to play while easy to pick up and understand.
-- The sites goal is also to provide users both with and without Warhammer 40k knowledge a basic foundation of information for all the factions involved in the game and how they interact with each other.
+- The aim of the website is to provide there users access to a database of characters to pick and chose from to take to their D&D games.
+- The site allows users to create, edit and save characters with information such as 'Name', 'Class' and 'Race'.
 
 ### Scope
 - Provide the user with a basic but enjoyable text based game with replayability and role play.
