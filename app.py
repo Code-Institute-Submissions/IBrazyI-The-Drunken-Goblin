@@ -4,6 +4,7 @@ import os
 import re
 from flask import (
     Flask, flash, render_template, redirect, request, session, url_for, jsonify)
+from dotenv import load_dotenv
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from pymongo.message import query
@@ -133,7 +134,9 @@ def edit(character_id):
 
     return render_template('edit.html', character=character, races_list=races_list, classes_list=classes_list)
 
+
 #Upload images to Cloudinary
+
 
 @app.route("/upload", methods=['POST'])
 def upload_file():
@@ -149,6 +152,7 @@ def upload_file():
       upload_result = cloudinary.uploader.upload(file_to_upload)
       app.logger.info(upload_result)
       return jsonify(upload_result)
+
 
 @app.route("/profile.html", methods=["GET", "POST"])
 def profile():
