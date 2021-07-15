@@ -3,7 +3,7 @@ from logging import debug
 import os
 import re
 from flask import (
-    Flask, flash, render_template, redirect, request, session, url_for)
+    Flask, flash, render_template, redirect, request, session, url_for, jsonify)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from pymongo.message import query
@@ -133,7 +133,22 @@ def edit(character_id):
 
     return render_template('edit.html', character=character, races_list=races_list, classes_list=classes_list)
 
+#Upload images to Cloudinary
 
+@app.route("/upload", methods=['POST'])
+def upload_file():
+  app.logger.info('in upload route')
+
+  cloudinary.config(cloud_name = os.getenv('CLOUD_NAME'), api_key=os.getenv('API_KEY'), 
+    api_secret=os.getenv('API_SECRET'))
+  upload_result = None
+  if request.method == 'POST':
+    file_to_upload = request.files['file']
+    app.logger.info('%s file_to_upload', file_to_upload)
+    if file_to_upload:
+      upload_result = cloudinary.uploader.upload(file_to_upload)
+      app.logger.info(upload_result)
+      return jsonify(upload_result)
 
 @app.route("/profile.html", methods=["GET", "POST"])
 def profile():
@@ -144,8 +159,6 @@ def profile():
     saved_characters = current_user["saved_characters"]
     for saved in saved_characters:
         print(saved)
-
-    
 
     return render_template(url_for('profile'), usercharacters=usercharacters, data_characters=data_characters, saved_characters=saved_characters)
     
