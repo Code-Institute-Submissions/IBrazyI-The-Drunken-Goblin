@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from pymongo.message import query
+from werkzeug.datastructures import FileStorage
 from werkzeug.security import generate_password_hash, check_password_hash
 import pymongo
 import cloudinary
@@ -81,10 +82,29 @@ def register():
 
     return render_template(url_for('register'))
 
+#Upload images to Cloudinary
+
+#@app.route("/upload", methods=['POST'])
+def upload(file):
+    app.logger.info('in upload route')
+    cloudinary.config(cloud_name = os.getenv('CLOUD_NAME'), api_key=os.getenv('API_KEY'), 
+        api_secret=os.getenv('API_SECRET'))
+    return cloudinary.uploader.upload(file, width=200, height=300)
+# cloudinary.config(cloud_name = os.getenv('CLOUD_NAME'), api_key=os.getenv('API_KEY'), 
+# api_secret=os.getenv('API_SECRET'))
+#   upload_result = None
+#   if request.method == 'POST':
+#     file_to_upload = request.files["file"]
+#     app.logger.info('%s file_to_upload', file_to_upload)
+#     if file_to_upload:
+#       upload_result = cloudinary.uploader.upload(file_to_upload)
+#       app.logger.info(upload_result)
+#       return jsonify(upload_result)
 
 @app.route("/create.html", methods=["GET", "POST"])
 def create():
     if request.method == "POST":
+        img_upload = upload(request.files['file'])
         new_character = {
             "character_name": request.form.get("character_name"),
             "character_race": request.form.get("character_race"),
@@ -92,7 +112,8 @@ def create():
             "character_likes": request.form.get("character_likes"),
             "character_dislikes": request.form.get("character_dislikes"),
             "character_bio": request.form.get("character_bio"),
-            "character_user": session['user']
+            "character_user": session['user'],
+            "character_image": img_upload["secure_url"]
         }
 
         mongo.db.characters.insert_one(new_character)
@@ -128,7 +149,8 @@ def edit(character_id):
             "character_likes": request.form.get("character_likes"),
             "character_dislikes": request.form.get("character_dislikes"),
             "character_bio": request.form.get("character_bio"),
-            "character_user": session['user']
+            "character_user": session['user'],
+            "character_image": request.files['file']
         }
 
         mongo.db.characters.replace_one(character, new_character)
@@ -137,24 +159,6 @@ def edit(character_id):
 
     return render_template('edit.html', character=character, races_list=races_list, classes_list=classes_list)
 
-
-#Upload images to Cloudinary
-
-
-@app.route("/upload", methods=['POST'])
-def upload():
-  app.logger.info('in upload route')
-
-  cloudinary.config(cloud_name = os.getenv('CLOUD_NAME'), api_key=os.getenv('API_KEY'), 
-    api_secret=os.getenv('API_SECRET'))
-  upload_result = None
-  if request.method == 'POST':
-    file_to_upload = request.files['file']
-    app.logger.info('%s file_to_upload', file_to_upload)
-    if file_to_upload:
-      upload_result = cloudinary.uploader.upload(file_to_upload)
-      app.logger.info(upload_result)
-      return jsonify(upload_result)
 
 
 @app.route("/profile.html", methods=["GET", "POST"])
