@@ -61,8 +61,8 @@
                     <div class="col s8 m1 offset-s2"><span class="hide-on-med-and-up">Likes: </span>{{ character.character_likes }}</div>
                     <div class="col s8 m1 offset-s2"><span class="hide-on-med-and-up">Dislikes: </span>{{ character.character_dislikes }}</div>
                     <div class="col s8 m2 offset-s2"><span class="hide-on-med-and-up">Bio: </span>{{ character.character_bio }}</div>
-                    <div class="col s6 m1 center"><a class="fas fa-heart-broken" href="{{ url_for('removesavecharacter', character_id=character._id) }}">Unsave Character</a></div>
-                    <div class="col s6 m1 center"><a class="fas fa-heart" href="{{ url_for('savecharacter', character_id=character._id) }}">Save Character</a></div>
+                    <div class="col s6 m1 center"><a class="save-buttons fas fa-heart-broken" href="{{ url_for('removesavecharacter', character_id=character._id) }}">Unsave Character</a></div>
+                    <div class="col s6 m1 center"><a class="save-buttons fas fa-heart" href="{{ url_for('savecharacter', character_id=character._id) }}">Save Character</a></div>
                 </div>
                 <div class="row center-align">
                     {% if character.character_user == session.user %}
