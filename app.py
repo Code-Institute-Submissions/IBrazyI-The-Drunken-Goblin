@@ -69,7 +69,7 @@ def register():
             "username": request.form.get("username").lower(),
             "email": request.form.get("email").lower(),
             "password": generate_password_hash(request.form.get("password")),
-            "saved_characters": []
+            "saved_characters": ["null"]
             
         }
         mongo.db.users.insert_one(register)    
@@ -142,7 +142,7 @@ def edit(character_id):
 
 
 @app.route("/upload", methods=['POST'])
-def upload_file():
+def upload():
   app.logger.info('in upload route')
 
   cloudinary.config(cloud_name = os.getenv('CLOUD_NAME'), api_key=os.getenv('API_KEY'), 

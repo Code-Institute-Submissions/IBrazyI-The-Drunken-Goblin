@@ -25,6 +25,14 @@ footer {
     padding: 0px;
 }
 
+/* Base */
+
+.social-link {
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
 /* Landing */
 
 .background-image-patrons {
