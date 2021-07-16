@@ -30,6 +30,15 @@ footer {
     padding: 0px;
 }
 
+.row {
+    margin: 0px;
+}
+
+.button-margin {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 /* Base */
 
 .social-link {
@@ -81,6 +90,7 @@ footer {
     padding: 10px 0px 10px 0px;
     border: 1px solid black;
     box-shadow: 1px 2px 1px 2px;
+    border-radius: 5px;
 }
 
 .character_divider {
@@ -103,6 +113,15 @@ footer {
     background-size: cover;
 }
 
+.info-text {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.character-image {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
 /* Register */
 
 .background-image-register {
