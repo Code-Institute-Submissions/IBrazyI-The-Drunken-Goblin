@@ -19,7 +19,7 @@
     <header>
       <nav class="teal lighten-2">
         <div class="nav-wrapper valign-wrapper">
-          <a href="#" class=" brand-logo center fas fa-beer"></a>
+          <a href="{{ url_for('landing') }}" class=" brand-logo center fas fa-beer"></a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
           <ul class="right hide-on-med-and-down">
             {% if session.user == null %}
