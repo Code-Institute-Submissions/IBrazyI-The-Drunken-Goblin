@@ -90,14 +90,15 @@ footer {
 @media (min-height: 800px) {
     .background-image-patrons {
         height: 50vh;
-        padding-top: 80px;
+        padding-top: 8vh;
     }
 
     .background-image-empty {
         height: 50vh;
-        padding-top: 100px;
+        padding-top: 10vh;
     }
 }
+
 
 /* Tavern */
 
@@ -135,6 +136,13 @@ footer {
     text-decoration: none;
 }
 
+@media (min-height: 800px) {
+    .background-image-tavern {
+        height: 50vh;
+        padding-top: 8vh;
+    }
+}
+
 /* Profile */
 
 .background-image-profile {
@@ -153,6 +161,14 @@ footer {
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+@media (min-height: 800px) {
+    .background-image-profile {
+        height: 50vh;
+        padding-top: 10vh;
+    }
+}
+
 /* Register */
 
 .background-image-register {
@@ -162,7 +178,15 @@ footer {
     background-size: cover;
 }
 
-/* Create */
+@media (min-height: 800px) {
+    .background-image-register {
+        height: 80vh;
+        padding-top: 25vh;
+    }
+}
+
+
+/* Create/Edit */
 
 .background-image-create {
     background-image: url(/static/images/create.jpg);
@@ -170,6 +194,15 @@ footer {
     background-clip: border-box;
     background-size: cover;
 }
+
+@media (min-height: 800px) {
+    .background-image-create {
+        height: 80vh;
+        padding-top: 9vh;
+    }
+}
+
+
 
 ::placeholder {
     color: white !important;
