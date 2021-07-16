@@ -39,6 +39,25 @@ footer {
     margin-bottom: 15px;
 }
 
+@media (max-height:800px) {
+    h1 {
+        font-size: 2.1rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 12px;
+    }
+}
+
+
 /* Base */
 
 .social-link {
@@ -66,6 +85,18 @@ footer {
 .faded-background {
     box-sizing: content-box;
     background-color: rgba(0, 0, 0, 0.37);
+}
+
+@media (min-height: 800px) {
+    .background-image-patrons {
+        height: 50vh;
+        padding-top: 80px;
+    }
+
+    .background-image-empty {
+        height: 50vh;
+        padding-top: 100px;
+    }
 }
 
 /* Tavern */

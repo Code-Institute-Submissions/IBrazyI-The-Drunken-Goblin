@@ -2,7 +2,7 @@
     {% block content %}
 
 
-    <div class="section background-image-patrons valign-wrapper">
+    <div class="row background-image-patrons">
         <div class="faded-background white-text">
             <div class="row">
                 <div class="col s12">
@@ -14,12 +14,12 @@
                 </div>
             </div>
             <div class="row center">
-                <a class="waves-effect waves-light btn-large" href="{{ url_for('tavern') }}">Meet your Heroes!</a>
+                <a class="button-margin waves-effect waves-light btn-large" href="{{ url_for('tavern') }}">Meet your Heroes!</a>
             </div>
         </div>
     </div>
 
-    <div class="section grey lighten-2 white text ">
+    <div class="row grey lighten-2 white text ">
         <div class="row">
             <div class="character_divider col s8 offset-s2"></div>
         </div>
@@ -41,11 +41,11 @@
     </div>
 
 
-    <div class="section background-image-empty">
+    <div class="row background-image-empty center">
         <div class="faded-background white-text">
             <div class="row">
-                <div class="col s12">
-                    <h3 class="center">Already have an account? Dont forget to Log In!</h3>
+                <div class="col s12 center">
+                    <h3 class="center">Already have an account?</h3>
                 </div>
             </div>
             <div class="row">
@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     <div class="row center">
-                        <button type="submit" class="waves-effect waves-light btn-large">
+                        <button type="submit" class="button-margin waves-effect waves-light btn-large">
                             Login!
                         </button>
                     </div>
