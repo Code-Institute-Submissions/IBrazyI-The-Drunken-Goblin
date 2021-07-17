@@ -66,6 +66,10 @@ footer {
     margin-right: 20px;
 }
 
+.social-icon {
+    font-size: 45px;
+}
+
 .social-link {
     color: black;
     text-transform: uppercase;
