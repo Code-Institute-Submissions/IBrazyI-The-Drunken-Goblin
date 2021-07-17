@@ -60,6 +60,12 @@ footer {
 
 /* Base */
 
+.site-logo {
+    font-size: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 .social-link {
     color: black;
     text-transform: uppercase;
