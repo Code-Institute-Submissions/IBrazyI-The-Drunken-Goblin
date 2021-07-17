@@ -36,7 +36,7 @@ footer {
 
 .button-margin {
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 50px;
 }
 
 @media (max-height:800px) {
@@ -195,9 +195,17 @@ footer {
     background-size: cover;
 }
 
+.select-dropdown {
+    color: white;
+}
+
+.file-upload {
+    margin: 10px;
+}
+
 @media (min-height: 800px) {
     .background-image-create {
-        height: 80vh;
+        height: 85vh;
         padding-top: 4vh;
     }
 }

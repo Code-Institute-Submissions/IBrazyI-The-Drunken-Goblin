@@ -20,8 +20,12 @@
             </div>
           </div>
 
-          <input type="file" name="file" id="fileid">
-
+          <div class="row">
+            <div class="col s8 m4 offset-s2 offset-m4 left">
+              <input class="file-upload" type="file" name="file" id="fileid">
+            </div>
+          </div>
+          
           <div class="row">
             <div class="input-field col s8 m4 offset-s2 offset-m4 center">
               <select id="character_race" name="character_race" class="white-text validate" required>
@@ -35,7 +39,7 @@
 
           <div class="row">
             <div class="input field col s8 m4 offset-s2 offset-m4 center">
-              <select id="character_class" name="character_class" class="validate" required>
+              <select id="character_class" name="character_class" class="white-text validate" required>
                 <option value="" disabled selected>Choose a class</option>
                 {% for classes in classes_list %}
                   <option value="{{ classes.class_name }}">{{ classes.class_name }}</option>
