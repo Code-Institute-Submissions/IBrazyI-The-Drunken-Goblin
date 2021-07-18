@@ -76,6 +76,11 @@ footer {
     text-decoration: none;
 }
 
+.social-link:hover {
+    transition: 2s;
+    color: white;
+}
+
 /* Landing */
 
 .background-image-patrons {

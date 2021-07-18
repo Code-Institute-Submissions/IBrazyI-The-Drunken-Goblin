@@ -50,14 +50,14 @@ their own characters, edit and remove them. But also contains a place where all 
 - The site allows users to create, edit and save characters with information such as 'Name', 'Class' and 'Race'.
 
 ### Scope
-- Provide the user with a basic but enjoyable text based game with replayability and role play.
+- Provide the user with a place to create, share and edit characters.
 - Provide visitors with a clean and easy to navigate user interface.
-- Provide concise but factual information about the theme and the game itself.
-- Allow users to influence the content of the game and get in contact with the creator.
+- Allow users to sort through the characters available. 
+- Provide users with the information they would need to use the characters in a game.
 
 ### Structure
 #### Interaction Design
-- Create a website/game that is responsive, works at all screen sizes and has mobile table and PC compatibility.
+- Create a website that is responsive, works at all screen sizes and has mobile table and PC compatibility.
 - Allow for easy navigation between pages of the website.
 - Provide a easy to understand ascetically pleasing game interface that makes it obvious what the user needs to do to progress.
 #### Information Architecture
