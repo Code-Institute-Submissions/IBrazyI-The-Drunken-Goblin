@@ -67,7 +67,7 @@
         </div>
     </div>
     {% if character["character_user"] == session.user %}
-    <div class="row">
+    <div class="row hide-on-med-and-down">
         <div class="col l8 offset-l2 center">
             <div class="col s6"><a class="character-button waves-effect waves-light btn-small" href="{{ url_for('edit', character_id=character._id) }}">Edit Hero</a></div>
             <div class="col s6"><a class="character-button waves-effect waves-light btn-small" href="{{ url_for('delete', character_id=character._id) }}">Delete Hero</a></div>

@@ -154,14 +154,23 @@ def edit(character_id):
 @app.route("/profile.html", methods=["GET", "POST"])
 def profile():
 
-    usercharacters = mongo.db.characters.find()
-    data_characters = mongo.db.characters.find()
     current_user = mongo.db.users.find_one({"username": session['user']})
+    characters = mongo.db.characters.find({"character_user":session['user']})
+    all_chars = mongo.db.characters.find()
+    
     saved_characters = current_user["saved_characters"]
-    for saved in saved_characters:
-        print(saved)
-
-    return render_template(url_for('profile'), usercharacters=usercharacters, data_characters=data_characters, saved_characters=saved_characters)
+    
+    for chars in all_chars:   
+        char = []
+        char.append(chars)
+        print(char)
+            
+        
+    
+    
+ 
+        
+    return render_template(url_for('profile'), characters=characters, char=char, saved_characters=saved_characters)
     
 
 
