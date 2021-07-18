@@ -37,18 +37,19 @@
     </div>
 </div>
 
-<div class="row valign-wrapper hide-on-med-and-down center-align">
+<div class="row valign-wrapper hide-on-med-and-down">
     <div class="col s10 offset-s1">
-        <div class="col m3"><h4>Portrait</h4></div>
-        <div class="col m1"><h4>Name</h4></div>
-        <div class="col m1"><h4>Race</h4></div>
-        <div class="col m1"><h4>Class</h4></div>
-        <div class="col m1"><h4>Likes</h4></div>
-        <div class="col m1"><h4>Dislikes</h4></div>
-        <div class="col m2"><h4>Backstory</h4></div>
-        <div class="col m2"><h4>Save/Unsave</h4></div>
+        <div class="col l2"><h4>Portrait</h4></div>
+        <div class="col l1"><h4>Name</h4></div>
+        <div class="col l1"><h4>Race</h4></div>
+        <div class="col l1"><h4>Class</h4></div>
+        <div class="col l1"><h4>Likes</h4></div>
+        <div class="col l1"><h4>Dislikes</h4></div>
+        <div class="col l"><h4>Backstory</h4></div>
+        <div class="col l2"><h4>Save/Unsave</h4></div>
     </div>
 </div>
+
 
 {% for character in characters %}
     {% if character|length > 0 %}
@@ -56,7 +57,7 @@
             <div class="col s10 offset-s1 tavern_characters grey darken-1 white-text valign-wrapper center">
                 <div class="row">
                     <div class="row">
-                        <div class="character-image"><img src="{{ character.character_image }}"></div>
+                        <div class="character-image col s8 offset-s2"><img src="{{ character.character_image }}"></div>
                         <div class="col s8 offset-s2"><span class="hide-on-large-and-up">Name: </span>{{ character.character_name }}</div>
                         <div class="col s8 offset-s2"><span class="hide-on-large-and-up">Race: </span>{{ character.character_race }}</div>
                         <div class="col s8 offset-s2"><span class="hide-on-large-and-up">Class: </span>{{ character.character_class }}</div>
@@ -66,37 +67,16 @@
                         <div class="col s5 save-buttons offset-s1"><a class="save-button-text" href="{{ url_for('removesavecharacter', character_id=character._id) }}"><i class="fas fa-heart-broken"></i>Unsave Character</a></div>
                         <div class="col s5 save-buttons "><a class="save-button-text" href="{{ url_for('savecharacter', character_id=character._id) }}"><i class="fas fa-heart"></i>Save Character</a></div>
                     </div>
+                {% if character["character_user"] == session.user %}
                     <div class="row">
                         <div class="col s6"><a class="character-button waves-effect waves-light btn-small" href="{{ url_for('edit', character_id=character._id) }}">Edit Hero</a></div>
                         <div class="col s6"><a class="character-button waves-effect waves-light btn-small" href="{{ url_for('delete', character_id=character._id) }}">Delete Hero</a></div>
                     </div>
+                    {% else %}
+                {% endif %}
                 </div>
             </div>
         </div>
-        <div class="row col s10 offset-s1 tavern_characters grey darken-1 white-text valign-wrapper">
-            <div class="character-image col s12 m3"><img src="{{ character.character_image }}"></div>
-            <div class="col s12 m1 center"><span class="hide-on-med-and-up">Name: </span>{{ character.character_name }}</div>
-            <div class="col s12 m1 center"><span class="hide-on-med-and-up">Race: </span>{{ character.character_race }}</div>
-            <div class="col s12 m1 center"><span class="hide-on-med-and-up">Class: </span>{{ character.character_class }}</div>
-            <div class="col s12 m1 center"><span class="hide-on-med-and-up">Likes: </span>{{ character.character_likes }}</div>
-            <div class="col s12 m1 center"><span class="hide-on-med-and-up">Dislikes: </span>{{ character.character_dislikes }}</div>
-            <div class="col s12 m1 center"><span class="hide-on-med-and-up">Bio: </span>{{ character.character_bio }}</div>
-            <div class="col s6 m1 center"><a class="button-margin save-buttons fas fa-heart-broken" href="{{ url_for('removesavecharacter', character_id=character._id) }}">Unsave Character</a></div>
-            <div class="col s6 m1 center"><a class="button-margin save-buttons fas fa-heart" href="{{ url_for('savecharacter', character_id=character._id) }}">Save Character</a></div>
-        {% if character.character_user == session.user %}
-        <div class="row">
-            <div class="col s10 offset-s1 character_divider"></div>
-        </div>
-        <div class="row">
-            <div class="col s6"><a class="button-margin waves-effect waves-light btn-small" href="{{ url_for('edit', character_id=character._id) }}">Edit Hero</a></div>
-            <div class="col s6"><a class="button-margin waves-effect waves-light btn-small" href="{{ url_for('delete', character_id=character._id) }}">Delete Hero</a></div>
-        </div>
-        {% endif %}
-    {% else %}
-        <h3>There appears to be no one in the tavern going by that name.</h3>
     {% endif %}
-        </div>
 {% endfor %}
-
-
 {% endblock %}

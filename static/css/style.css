@@ -138,9 +138,11 @@ footer {
     border: 1px solid black;
     box-shadow: 1px 2px 1px 2px;
     border-radius: 5px;
-    overflow: hidden;
 }
 
+.remove-margin {
+    margin: 0px;
+}
 .character-button {
     margin: 10px;
 }
