@@ -134,10 +134,15 @@ footer {
 
 .tavern_characters {
     margin-bottom: 20px;
-    padding: 10px 0px 10px 0px;
+    padding: 10px 5px 10px 5px;
     border: 1px solid black;
     box-shadow: 1px 2px 1px 2px;
     border-radius: 5px;
+    overflow: hidden;
+}
+
+.character-button {
+    margin: 10px;
 }
 
 .character_divider {
@@ -147,8 +152,14 @@ footer {
 }
 
 .save-buttons {
+    margin: 10px 0px 10px 0px;
+   
+}
+
+.save-button-text {
     color: white;
     text-decoration: none;
+    font-family: 'Raleway', sans-serif;
 }
 
 @media (min-height: 800px) {
