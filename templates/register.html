@@ -12,17 +12,17 @@
             <form class="white-text" method="POST" action="{{ url_for('register') }}">
                 <div class="row">
                     <div class="col s8 m4 offset-s2 offset-m4">
-                        <input id="username" name="username" placeholder="Username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="white-text validate" required>
+                        <input id="username" name="username" placeholder="Username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="white-text validate" title="Username can only contain letters and numbers." required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col s8 m4 offset-s2 offset-m4">
-                    <input id="email" name="email" placeholder="Email" type="email" class="white-text validate" required>
+                    <input id="email" name="email" placeholder="Email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Must be a valid email address." class="white-text validate" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col s8 m4 offset-s2 offset-m4">
-                        <input id="password" name="password" placeholder="Password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="white-text validate" required>
+                        <input id="password" name="password" placeholder="Password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9!@#$%^*_|]{5,15}$" title="Password can only contain letters, numbers and symbols !@#$%^*_ ." class="white-text validate" required>
                     </div>
                 </div>
                 <div class="row">

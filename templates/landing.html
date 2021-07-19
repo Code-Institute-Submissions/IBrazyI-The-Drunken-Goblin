@@ -52,12 +52,12 @@
                 <form class="" method="POST" action="{{ url_for('landing') }}">
                     <div class="row">
                         <div class="col s8 m4 offset-s2 offset-m4">
-                            <input id="username" placeholder="Username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="white-text validate " required>
+                            <input id="username" placeholder="Username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" title="Username can only contain letters and numbers." class="white-text validate " required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col s8 m4 offset-s2 offset-m4">
-                            <input id="password" placeholder="Password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="white-text validate" required>
+                            <input id="password" placeholder="Password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" title="Password can only contain letters, numbers and symbols !@#$%^*_ ." class="white-text validate" required>
                         </div>
                     </div>
                     <div class="row center">
