@@ -78,19 +78,19 @@ their own characters, edit and remove them. But also contains a place where all 
 - Created character information is labelled and spaced well on all screen sizes.
 
 #### Interface Design
-- Images are used as selectors for both the main page and information pages of the site. Reducing page clutter and allowing easy interaction.
-- The game interface is basic with clear well structured options. With question and answers split with an image between them.
+- The content is spaced well and its obvious where to go to proceed to the other pages on the site.
+- All buttons are labelled and spaced well, so the user can see what page they will be sent too.
 
 #### Navigation Design
-- Navigation is located at the top of the page, with three options.
-- The navigation links are text even at smaller screen sizes so the user will know what option to select if they need more information.
+- Navigation is located at the top of the page, the links the user will see is determined by their log in status.
+- The user can also navigate using call to actions, or will be redirected after completing certain forms within the site.
 
 ### Surface
 #### Typography
-Three different fonts have been selected for use on this site/game. All fonts have been obtained from [Google Fonts](https://fonts.google.com/).
-- Pathway Gothic: Used for all headings and titles, bold and stand out font.
-- Brygada 1918: Used for all paragraph text and used in game section for question and answers. Easy to read and has a slight military appearance.
-- Recursive: Used for "talking head" text box, keeps to the grim dark theme of the site/game and has a military/typewriter style.
+Two different fonts have been selected for use on this site. Both fonts have been obtained from [Google Fonts](https://fonts.google.com/).
+- Raleway: Has been used for all text that is not a heading.
+- Cinzel: 
+
 
 #### Colour Scheme
 
