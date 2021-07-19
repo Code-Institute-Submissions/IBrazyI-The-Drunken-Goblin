@@ -2,7 +2,7 @@
 
 ![The Drunken Goblin](assets/readme/responsive.jpg)
 
-[Visit My Site Here]()
+[Visit My Site Here](https://the-drunken-goblin.herokuapp.com/)
 
 ## Overview
 The Drunken Goblin in a site that provides users with a database to find, create, edit and share role playing characters. Allowing users to log in, view
@@ -68,13 +68,14 @@ their own characters, edit and remove them. But also contains a place where all 
 ### Skeleton
 #### Wireframes
 
-
+![Wireframes](/static/images/wireframes.jpg)
 
 #### Information Design
-- Information for each faction is dynamically obtained depending on which faction is selected.
-- Information layout is structured in a linear format, sub heading and information text.
-- Navigation and background information are represented using a smaller text box pinned to the bottom of the screen,
-- The game information is displayed in its own text box providing background and with an image below representing the situation.
+- Information text is separated and spaced out to keep it clear easy to read.
+- Information and forms with images in the background are also placed on a darker background with lighter text to help it stand out.
+- All navigation links are easy to read and see.
+- All Forms have appropriate labels so the user knows what they need to input.
+- Created character information is labelled and spaced well on all screen sizes.
 
 #### Interface Design
 - Images are used as selectors for both the main page and information pages of the site. Reducing page clutter and allowing easy interaction.
