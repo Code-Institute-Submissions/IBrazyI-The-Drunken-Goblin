@@ -59,21 +59,16 @@ their own characters, edit and remove them. But also contains a place where all 
 #### Interaction Design
 - Create a website that is responsive, works at all screen sizes and has mobile table and PC compatibility.
 - Allow for easy navigation between pages of the website.
-- Provide a easy to understand ascetically pleasing game interface that makes it obvious what the user needs to do to progress.
+- Create easy to use and understand forms for users to fill in.
+- Display created character information in an easy to read format.
 #### Information Architecture
 - Content is well structured, in line with the theme, easy to read and distinguish between.
-- Images are used mostly as navigation tool, each one representing a different faction in the game, allowing for the user to physically see who they are choosing without having to guess.
+- Content is spaced evenly and consistently throughout all screen sizes. 
 
 ### Skeleton
-#### Mobile Wireframes
+#### Wireframes
 
-![MobileIntro](/assets/readme/intromobile.jpg) ![MobileTitle](/assets/readme/titlemobile.jpg) ![MobileFaction](/assets/readme/alliesmobile.jpg) ![MobileEnemy](/assets/readme/enenymobile.jpg)
-![MobileGame](/assets/readme/playmobile.jpg) ![MobileVictory](/assets/readme/victorymobile.jpg) ![MobileForces](/assets/readme/forcesmobile.jpg) ![MobileContact](/assets/readme/contactmobile.jpg)
 
-#### Desktop/Tablet Wireframes
-
-![Intro](/assets/readme/intro.jpg) ![Title](/assets/readme/title.jpg) ![Faction](/assets/readme/allies.jpg) ![Enemy](/assets/readme/enemy.jpg)
-![Game](/assets/readme/play.jpg) ![Victory](/assets/readme/victory.jpg) ![Forces](/assets/readme/forces.jpg) ![Contact](/assets/readme/contact.jpg)
 
 #### Information Design
 - Information for each faction is dynamically obtained depending on which faction is selected.
