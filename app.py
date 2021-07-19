@@ -26,7 +26,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-
+#Landing page, also contains log in functionality
 
 @app.route("/")
 @app.route("/landing.html", methods=["GET", "POST"])
@@ -54,7 +54,7 @@ def landing():
     return render_template(url_for('landing'))
 
 
-
+#Register page
 
 @app.route("/register.html", methods=["GET", "POST"])
 def register(): 
@@ -82,14 +82,17 @@ def register():
 
     return render_template(url_for('register'))
 
+
 #Upload images to Cloudinary
 
-#@app.route("/upload", methods=['POST'])
 def upload(file):
     app.logger.info('in upload route')
     cloudinary.config(cloud_name = os.getenv('CLOUD_NAME'), api_key=os.getenv('API_KEY'), 
         api_secret=os.getenv('API_SECRET'))
     return cloudinary.uploader.upload(file, width=200, height=300)
+
+
+#Create a character page
 
 @app.route("/create.html", methods=["GET", "POST"])
 def create():
@@ -165,11 +168,6 @@ def profile():
         char.append(chars)
         print(char)
             
-        
-    
-    
- 
-        
     return render_template(url_for('profile'), characters=characters, char=char, saved_characters=saved_characters)
     
 
@@ -181,6 +179,7 @@ def tavern():
     user = mongo.db.users.find()
 
     return render_template('tavern.html', characters=characters, user=user)
+
 
 @app.route("/search", methods=["GET","POST"])
 def search():
