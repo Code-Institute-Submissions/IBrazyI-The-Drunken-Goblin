@@ -107,8 +107,9 @@ Two different fonts have been selected for use on this site. Both fonts have bee
 - The edit page is a close mirror of the create page, although the placeholder text will be shown as the details of the character chose to edit.
 - The user can also log out and use the site to see all characters created but will not be able to create, edit or save characters.
 #### Existing Features 
-- Create-
-- Read-
+- Create- The user can create an account, where they can log in and view and experience the site with more features than a non logged in user.
+        - The user can also create characters of their own, where they can choose the; name, image, race, class, likes, dislikes and backstory all in line with DnD rules.
+- Read- 
 - Update-
 - Delete-
 - Image upload-
