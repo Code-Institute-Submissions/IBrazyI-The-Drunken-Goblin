@@ -88,38 +88,37 @@ their own characters, edit and remove them. But also contains a place where all 
 ### Surface
 #### Typography
 Two different fonts have been selected for use on this site. Both fonts have been obtained from [Google Fonts](https://fonts.google.com/).
-- Raleway: Has been used for all text that is not a heading.
-- Cinzel: 
+- Raleway: Has been used for all text that is not a heading. This font is well spaced and easy to read with a more curved style.
+- Cinzel: Has been used to all headings, a sharper text easy to read with a more fantasy style to fit the theme.
 
 
 #### Colour Scheme
 
-![Colour Pallet](/assets/readme/javascriptuscrusadepallet.png)
+![Colour Pallet](/static/images/thedrunkengoblinpallet.jpg)
 
 
 ## Features
-The site is split up into three different HTML pages, responsive at all screen sizes and follow a similar style and aesthetic.
-- Index/Play: This is the initial landing page for the user, upon loading an intro animation plays setting the scene and helping to show the theme of the rest of the page.
-    Upon completion of the intro the player is landed at the main area of the page, where they can select each item on the nave bar but also select the faction they wish to
-    play in the game. They are then taken to the next area where they select the enemy they wish to face and one that is done they are taken to the game screen. At certain points
-    within the site a text box giving the player information and direction displays at the bottom of the screen. When the player reaches the play screen they are faced with a question
-    and three answers to pick from, these answers contain hidden values and the player must select what they think is best in the given situation. As they progress the situation will
-    become more and more dire and their choices will have larger effects. Upon victory or defeat the player is then taken to the relevant page where they can chose to continue back to
-    the faction selection area and play again.
-- Forces: Upon selecting the Forces 'nav' element the user will be taken to the page. Here they will be able to chose which faction they wish to find information on which is then obtained
-    dynamically using java script. This information is then displayed separately.
-- Contact us: Upon selecting this page the user is then taken an area where they can both sign up to a mailing list and submit their name and their own suggestions to the creator. These forms
-    are validated with the use of java script.
+- The site is a multi-page site that includes a Home/Landing page, where the user and view the main page of the site the 'tavern', register and account or login.
+- The 'Tavern' page is the main page of the site where all characters within the database are displayed. The idea is to display enough information for the user to 
+    be able to use the characters in a game of D&D.
+- There is a log in form on the landing page where the user will be 'logged in' and re-routed to their profile page.
+- The profile page displays the characters the user has created, also showing the characters the user has saved.
+- The create page is where the user can create a character of their own, where they will fill in a form with character details and upload an image of their character.
+- The edit page is a close mirror of the create page, although the placeholder text will be shown as the details of the character chose to edit.
+- The user can also log out and use the site to see all characters created but will not be able to create, edit or save characters.
 #### Existing Features 
-- Basic text based game, with multiple options and a hidden health system giving the user the sense of choice.
-- Dynamic display of information using java script and pre defined variables rather than using HTML text.
-- Created the Index/Play page with HTML elements and changed the content using java script.
-- Created Forces page using only java script to create all elements, interactions and content.
+- Create-
+- Read-
+- Update-
+- Delete-
+- Image upload-
+- Search-
+- Save characters-
+
+
 
 #### Features Left to Implement
- - Add more factions and enemies to the game screen, increasing replayability.
- - Add more options for each level of the game that have more interactions such as a 50/50 chance to change the outcome for better or worse. 
- - Add links and more information to the lore and hobby of Warhammer 40k and letting the user know more about the hobby.
+
 
 
 <a name="technologies"></a>
@@ -238,7 +237,7 @@ Question interactions repeating even after only one button press.
 
 ## Deployment
 
-### Creating Repository
+### Deployment to Github
 1. Created new file inside documents folder named "Coding Course" and within that created a file called "Javascriptus-Crusade(Milestone Project 2)"
 2. Opened GitHub Desktop and selected "New Repository"
 3. Gave the project name "Sharks-Under-Threat" and clicked "Create Repository"
@@ -249,11 +248,10 @@ Question interactions repeating even after only one button press.
 8. Pushed changed with "Git Push" adding my work to my Git Hub page.
 9. Opened my GitHib page to see the changes.
 
-### Viewing Site
-1. After logging in to GitHub I went to the "settings" tab.
-2. Upon scrolling down to "Danger Zone" I set the repository to "Public".
-3. Scrolling back up to "GitHub Pages" set the source "Branch-main", "File-Root" and selected save.
-4. After reloading and scrolling back down to "GitHub Pages" selected the link where my site had been published.
+### How to fork the project
+
+### Deployment to Heroku
+
 
 <a name="credits"></a>
 
