@@ -62,8 +62,12 @@
             <div class="col l1">{{ character.character_likes }}</div>
             <div class="col l1">{{ character.character_dislikes }}</div>
             <div class="col l2">{{ character.character_bio }}</div>
+        {% if session.user %}
             <div class="col l1 save-buttons offset-s1"><a class="save-button-text" href="{{ url_for('removesavecharacter', character_id=character._id) }}"><i class="fas fa-heart-broken"></i>Unsave Character</a></div>
             <div class="col l1 save-buttons "><a class="save-button-text" href="{{ url_for('savecharacter', character_id=character._id) }}"><i class="fas fa-heart"></i>Save Character</a></div>
+            {% else %}
+            <div class="col l2">Please log in to save characters.</div>
+        {% endif %}
         </div>
     </div>
     {% if character["character_user"] == session.user %}
@@ -81,14 +85,17 @@
                 <div class="row">
                     <div class="row">
                         <div class="character-image col s8 offset-s2"><img src="{{ character.character_image }}"></div>
-                        <div class="col s8 offset-s2"><span>Name: </span>{{ character.character_name }}</div>
-                        <div class="col s8 offset-s2"><span>Race: </span>{{ character.character_race }}</div>
-                        <div class="col s8 offset-s2"><span>Class: </span>{{ character.character_class }}</div>
-                        <div class="col s8 offset-s2"><span>Likes: </span>{{ character.character_likes }}</div>
-                        <div class="col s8 offset-s2"><span>Dislikes: </span>{{ character.character_dislikes }}</div>
-                        <div class="col s8 offset-s2"><span>Bio: </span>{{ character.character_bio }}</div>
-                        <div class="col s5 save-buttons offset-s1"><a class="save-button-text" href="{{ url_for('removesavecharacter', character_id=character._id) }}"><i class="fas fa-heart-broken"></i>Unsave Character</a></div>
-                        <div class="col s5 save-buttons "><a class="save-button-text" href="{{ url_for('savecharacter', character_id=character._id) }}"><i class="fas fa-heart"></i>Save Character</a></div>
+                        <div class="char-info col s8 offset-s2"><span>Name: </span>{{ character.character_name }}</div>
+                        <div class="char-info col s8 offset-s2"><span>Race: </span>{{ character.character_race }}</div>
+                        <div class="char-info col s8 offset-s2"><span>Class: </span>{{ character.character_class }}</div>
+                        <div class="char-info col s8 offset-s2"><span>Likes: </span>{{ character.character_likes }}</div>
+                        <div class="char-info col s8 offset-s2"><span>Dislikes: </span>{{ character.character_dislikes }}</div>
+                        <div class="char-info col s8 offset-s2"><span>Bio: </span>{{ character.character_bio }}</div>
+                    {% if session.user %}
+                        <div class="char-info col s5 save-buttons offset-s1"><a class="save-button-text" href="{{ url_for('removesavecharacter', character_id=character._id) }}"><i class="fas fa-heart-broken"></i>Unsave Character</a></div>
+                        <div class="char-info col s5 save-buttons "><a class="save-button-text" href="{{ url_for('savecharacter', character_id=character._id) }}"><i class="fas fa-heart"></i>Save Character</a></div>
+                        {% else %}
+                    {% endif %}
                     </div>
                 {% if character["character_user"] == session.user %}
                     <div class="row">

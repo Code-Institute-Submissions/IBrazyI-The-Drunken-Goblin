@@ -164,6 +164,10 @@ footer {
     font-family: 'Raleway', sans-serif;
 }
 
+.char-info {
+    margin-bottom: 10px;
+}
+
 @media (min-height: 800px) {
     .background-image-tavern {
         height: 50vh;
