@@ -108,13 +108,17 @@ Two different fonts have been selected for use on this site. Both fonts have bee
 - The user can also log out and use the site to see all characters created but will not be able to create, edit or save characters.
 #### Existing Features 
 - Create- The user can create an account, where they can log in and view and experience the site with more features than a non logged in user.
-        - The user can also create characters of their own, where they can choose the; name, image, race, class, likes, dislikes and backstory all in line with DnD rules.
-- Read- 
-- Update-
-- Delete-
-- Image upload-
-- Search-
-- Save characters-
+    - The user can also create characters of their own, where they can choose the; name, image, race, class, likes, dislikes and backstory all in line with DnD rules.
+- Read- On the tavern and profile pages the user can see the character information oh created characters straight from the data base.
+- Update- Users can edit characters they have already created by selecting them from the user page.
+- Delete- Users can also delete characters they have created, although not characters made by other users.
+- Image upload- Upon creating a character the user will be required to upload an image.
+    - The image is uploaded to 'cloudinary' using an API within the code. 
+    - This image is then edit to a specific height and width and then converted into a url.
+    - This url is saved within the data base in the character section and then loaded in the tavern and profile pages.          
+- Search- The user will be able to search by character name, race and class on the tavern page.
+- Save characters- Upon visiting the tavern page, the user will be able to save and store any characters they would like to quickly access.
+    - These characters will be available on the users profile page under the characters they have made.
 
 
 
