@@ -150,12 +150,35 @@ Two different fonts have been selected for use on this site. Both fonts have bee
 - Coolors: Used to display colour pallet used.
 - [HTML Validator](https://validator.w3.org/) - Used to check HTML code for errors.
 - [CSS Validator](https://jigsaw.w3.org/css-validator/) - Used to check CSS code for errors.
+- [Python Validator](https://extendsclass.com/python-tester.html) - Used to check Python code for errors.
 
 <a name="Testing"></a>
 
 ## Testing
+- Code Validators- 
+- Python ![Python Validation](/static/images/pythonchecker.jpg)
+- HTML ![HTML Validation](/static/images/htmlchecker.jpg)
+- CSS ![CSS Validation](/static/images/cssvalidator.jpg)
+    - Only errors to show are with Materialise Library.
+
 
 ### Bugs
+Form validation not displaying required characters.
+- Gave text inputs a 'title' displaying what characters they could use within the input.
+
+Error when users don't upload image when creating a character.
+- Changed the input to a required input meaning the user must create a character with an image.
+
+User log in giving error when fields are empty.
+- Added required to the log in input area so the button cannot submit empty fields.
+
+Saved character functionality not saving characters.
+- Saved the name of the character to save as a new array within the 'user' database.
+
+Saved characters not showing on profile page.
+- Looped through all characters within the database comparing the character name with the saved name in the user database. Then displaying the characters where the names are the same.
+
+
 
 
 
