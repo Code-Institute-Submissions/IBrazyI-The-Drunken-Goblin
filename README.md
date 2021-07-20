@@ -1,6 +1,6 @@
 # The Drunken Goblin (Milestone Project 3)
 
-![The Drunken Goblin](assets/readme/responsive.jpg)
+![The Drunken Goblin](/static/images/responsive.jpg)
 
 [Visit My Site Here](https://the-drunken-goblin.herokuapp.com/)
 
