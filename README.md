@@ -128,6 +128,7 @@ Two different fonts have been selected for use on this site. Both fonts have bee
 - Email verification- When creating an account the site takes the users, 'username', 'email' and 'password'. Currently the email is not used within the database.
     - Adding email verification the user can confirm they have signed up to the site and will also need to validate their email address.
 - Password reset- With email verification naturally the ability to reset the user password would be a helpful addition and improve the user experience.
+- Ask user the confirm if they want to delete a character.
 
 
 <a name="technologies"></a>
@@ -172,64 +173,35 @@ Error when users don't upload image when creating a character.
 User log in giving error when fields are empty.
 - Added required to the log in input area so the button cannot submit empty fields.
 
+Saved character functionality available for non logged in users and giving error.
+- Removed the option for save characters if the user is not logged in.
+
 Saved character functionality not saving characters.
 - Saved the name of the character to save as a new array within the 'user' database.
 
 Saved characters not showing on profile page.
 - Looped through all characters within the database comparing the character name with the saved name in the user database. Then displaying the characters where the names are the same.
 
-
-
-
-
-
-
 ### Nav Bar
 - Checked that all links work correctly, taking the user to the desired page.
-- Nav bar loads after the intro sequence, and upon refreshing into sequence does not run.
+- Nav bar condenses to hamburger icon on smaller screen and displays correctly on the side of the screen.
 
-### Forces
-- Check that upon clicking each faction separately the information is correct.
-- Layout remains correct even when displaying assets with more or less text.
+### Landing
+- All calls to action on landing page take user to correct pages.
+- Text and images are displayed correctly at all screen sizes. 
 
-### Contact Us
-- Both links work and submit correctly.
-- Email validation works, only email addresses are allowed to be submitted.
+### Footer
+- All links work as intended, taking user to social media sites.
+- Git hub and linked in work as intended taking user to creator pages.
+- Portfolio site is a dead link opening the new instance of the site.
 
-### Play
-#### Faction Selection
-- Faction selection works as intended.
-- Hovering over faction give a short summary of the faction.
-- Local storage stores the faction selected.
-- "Talking head" displays correct text cycles through the two sets of text and then remains hidden until page reload.
-![TalkingHead](/assets/readme/talkinghead.jpg)
-
-#### Enemy Selection
-- Enemy selection works as intended.
-- Hovering over enemy gives a short summary
-- Local storage saves the enemy selected.
-- "talking head" displays correct text and remains hidden upon clicking.
-
-#### Game Screen
-- Game loads correct, correct questions and answers are loaded dependant on which faction and enemy were selected.
-- Game image loads correctly and different for which campaign was selected.
-- Testing each option displays the correct damage and health, then loads the next set of question and answers.
-- Tested using console.logs to display information within the code. 
-![WorkingGame](/assets/readme/gameworking.jpg)
-
-#### Victory/Defeat
-- Victory page shows if player health is about 0 after the 5th and last question of the game.
-- Defeat page shows when player health reaches 0. Displays correctly.
-- Local storage is cleared after each round of the game to reset the faction and enemy.
-![LoseGame](/assets/readme/losegame.jpg)
-![LocalStorage](/assets/readme/localstoragereset.jpg)
-
-### Code Validators
-- HTML Validator shows no errors.
-![HTML](/assets/readme/htmlchecker.jpg)
-
-- CSS Validator shows no errors.
-![CSS](/assets/readme/csschecker.jpg)
+### Tavern 
+- Users are allowed to access this page without logging in and displayed well on all screen sizes.
+- Characters are displayed as intended, users not logged in are unable to save characters. 
+- Search functionality works as intended.
+- Clear button reloads the page without the search criteria.
+- Logged in characters can save characters.
+- Logged in characters can edit and delete their own characters, these links take them to the desired page.
 
 ### Devices
 - Galaxy S9: Works as intended.

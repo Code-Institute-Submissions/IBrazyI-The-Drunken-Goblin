@@ -24,9 +24,10 @@
           <ul class="right hide-on-med-and-down">
             {% if session.user == null %}
             <li><a href="{{ url_for('landing') }}" class="">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
             <li><a href="{{ url_for('tavern') }}" class="">Enter the Tavern.</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
+
             {% if session.user %}
             <li><a href="{{ url_for('profile') }}">Profile</a></li>
             {% endif %}
