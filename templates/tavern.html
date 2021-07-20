@@ -24,8 +24,8 @@
         <div class="row">
             <div class="col s10 offset-s1 center">
             <h4>Welcome to the Tavern!</h4>
-            <p class="info-text">Here you can see all the Heroes currently inside. If you know who your looking for, or know what type of Hero you need dont be afraid to search for them!</p>
-            <p class="info-text">Selecting Save and Unsave Character will save the character to your profile and remove the character respectivley.</p>
+            <p class="info-text">Here you can see all the heroes currently inside The Tavern. If you know who you're looking for, or know what type of hero you need, don't be afraid to search for them!</p>
+            <p class="info-text">Selecting Save and Unsave Character will save or remove the character from your profile.</p>
             </div>
         </div>
     </div>
@@ -66,7 +66,7 @@
             <div class="col l1 save-buttons offset-s1"><a class="save-button-text" href="{{ url_for('removesavecharacter', character_id=character._id) }}"><i class="fas fa-heart-broken"></i>Unsave Character</a></div>
             <div class="col l1 save-buttons "><a class="save-button-text" href="{{ url_for('savecharacter', character_id=character._id) }}"><i class="fas fa-heart"></i>Save Character</a></div>
             {% else %}
-            <div class="col l2">Please log in to save characters.</div>
+            <div class="col l2">Please login to save characters.</div>
         {% endif %}
         </div>
     </div>

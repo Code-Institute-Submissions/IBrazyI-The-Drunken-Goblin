@@ -5,8 +5,8 @@
 [Visit My Site Here](https://the-drunken-goblin.herokuapp.com/)
 
 ## Overview
-The Drunken Goblin in a site that provides users with a database to find, create, edit and share role playing characters. Allowing users to log in, view
-their own characters, edit and remove them. But also contains a place where all characters stored into the database can be seen.
+The Drunken Goblin is a site that provides users with a database to find, create, edit and share role playing characters. It allows users to log in, view
+their own characters, edit and remove them, and also contains a place where all characters stored into the database can be seen.
 
 ## Table of Contents
 
@@ -28,39 +28,39 @@ their own characters, edit and remove them. But also contains a place where all 
 ### User Stories
 #### A First Time Visitor
 - I want to be able to navigate the site easily and understand what it is for.
-- I want to be able to look for role playing characters that suite my needs.
-- I want to navigate the site easily, know what page I'm on be able to use the site to obtain all the information I need.
+- I want to be able to look for role-playing characters that suit my needs.
+- I want to navigate the site easily, know what page I'm on, and be able to use the site to obtain all the information I need.
 - I want to be able to create an account and create my own characters.
 
 #### A Returning User
 - I want to be able to log back into my account.
-- I want to be able to see that characters that I have made then edit/delete them.
-- I want to save characters that I did not make from other users in the database.
-- I want to be able to sort/search for specific characters to fill me needs.
+- I want to be able to see that characters that I have made, then edit/delete them.
+- I want to save characters that other users in the database have made. 
+- I want to be able to sort/search for specific characters to fill my needs.
 
 #### A User already with Dungeons and Dragons (D&D) knowledge
-- I want to be able to create, edit and share characters that fit within the D&D specifications
+- I want to create, edit and share characters that fit within the D&D specifications. 
 - I want to see new and unusual characters that people have created that I can bring to my games.
-- I want to see information on characters that I can use in my games and give me ideas for characters I would like to play.
+- I want to see information on characters that I can use in my games, and get ideas for characters I would like to play.
 
 
 
 ### Strategy
-- The aim of the website is to provide there users access to a database of characters to pick and chose from to take to their D&D games.
+- The aim of the website is to provide users access to a database of characters to pick and choose from to take to their D&D games.
 - The site allows users to create, edit and save characters with information such as 'Name', 'Class' and 'Race'.
 
 ### Scope
 - Provide the user with a place to create, share and edit characters.
-- Provide visitors with a clean and easy to navigate user interface.
+- Provide visitors with a clean and easy-to-navigate user interface.
 - Allow users to sort through the characters available. 
 - Provide users with the information they would need to use the characters in a game.
 
 ### Structure
 #### Interaction Design
-- Create a website that is responsive, works at all screen sizes and has mobile table and PC compatibility.
+- Create a website that is responsive, works at all screen sizes and has mobile, tablet and PC compatibility.
 - Allow for easy navigation between pages of the website.
 - Create easy to use and understand forms for users to fill in.
-- Display created character information in an easy to read format.
+- Display created character information in an easy-to-read format.
 #### Information Architecture
 - Content is well structured, in line with the theme, easy to read and distinguish between.
 - Content is spaced evenly and consistently throughout all screen sizes. 
@@ -71,18 +71,18 @@ their own characters, edit and remove them. But also contains a place where all 
 ![Wireframes](/static/images/wireframes.jpg)
 
 #### Information Design
-- Information text is separated and spaced out to keep it clear easy to read.
-- Information and forms with images in the background are also placed on a darker background with lighter text to help it stand out.
+- Information text is separated and spaced-out to keep it clear and easy to read.
+- Information and forms with images in the background are also placed on a darker background with lighter text, to help it stand out.
 - All navigation links are easy to read and see.
-- All Forms have appropriate labels so the user knows what they need to input.
+- All forms have appropriate labels so the user knows what they need to input.
 - Created character information is labelled and spaced well on all screen sizes.
 
 #### Interface Design
-- The content is spaced well and its obvious where to go to proceed to the other pages on the site.
-- All buttons are labelled and spaced well, so the user can see what page they will be sent too.
+- The content is spaced well, and its obvious where to proceed onto other pages on the site.
+- All buttons are labelled and spaced well, so the user can see what page they will be sent to.
 
 #### Navigation Design
-- Navigation is located at the top of the page, the links the user will see is determined by their log in status.
+- Navigation is located at the top of the page, the links the user will see is determined by their login status.
 - The user can also navigate using call to actions, or will be redirected after completing certain forms within the site.
 
 ### Surface
@@ -98,37 +98,35 @@ Two different fonts have been selected for use on this site. Both fonts have bee
 
 
 ## Features
-- The site is a multi-page site that includes a Home/Landing page, where the user and view the main page of the site the 'tavern', register and account or login.
-- The 'Tavern' page is the main page of the site where all characters within the database are displayed. The idea is to display enough information for the user to 
+- The site is a multi-page site that includes a Home/Landing page, where the user and view the main page of the site the 'tavern', register an account or login.
+- The 'Tavern' page is the main page of the site, where all characters within the database are displayed. The idea is to display enough information for the user to 
     be able to use the characters in a game of D&D.
-- There is a log in form on the landing page where the user will be 'logged in' and re-routed to their profile page.
+- There is a login form on the landing page, where the user will be 'logged in' and re-routed to their profile page.
 - The profile page displays the characters the user has created, also showing the characters the user has saved.
-- The create page is where the user can create a character of their own, where they will fill in a form with character details and upload an image of their character.
+- The create page is where the user can create a character of their own, where they will complete a form with character details and upload an image of their character.
 - The edit page is a close mirror of the create page, although the placeholder text will be shown as the details of the character chose to edit.
 - The user can also log out and use the site to see all characters created but will not be able to create, edit or save characters.
 #### Existing Features 
-- Create- The user can create an account, where they can log in and view and experience the site with more features than a non logged in user.
-    - The user can also create characters of their own, where they can choose the; name, image, race, class, likes, dislikes and backstory all in line with DnD rules.
-- Read- On the tavern and profile pages the user can see the character information oh created characters straight from the data base.
+- Create- The user can create an account, where they can login, view and experience the site with more features than a user without a login.
+    - The user can also create characters of their own, where they can choose the; name, image, race, class, likes, dislikes and backstory all in line with D&D rules.
+- Read- On the tavern and profile pages, the user can see the character information of created characters straight from the database.
 - Update- Users can edit characters they have already created by selecting them from the user page.
 - Delete- Users can also delete characters they have created, although not characters made by other users.
-- Image upload- Upon creating a character the user will be required to upload an image.
+- Image upload- Upon creating a character, the user will be required to upload an image.
     - The image is uploaded to 'cloudinary' using an API within the code. 
-    - This image is then edit to a specific height and width and then converted into a url.
-    - This url is saved within the data base in the character section and then loaded in the tavern and profile pages.          
+    - This image is then edited to a specific height and width and then converted into a url.
+    - This url is saved within the database in the character section, and then loaded in the tavern and profile pages.          
 - Search- The user will be able to search by character name, race and class on the tavern page.
 - Save characters- Upon visiting the tavern page, the user will be able to save and store any characters they would like to quickly access.
     - These characters will be available on the users profile page under the characters they have made.
 
-
-
 #### Features Left to Implement
-- Character stats- During the DnD characters creation process the character stats are an important part. Adding a feature where the user can change the stats of the characters they made would be a natural addition.
-- Improve the character save option reducing from two buttons to one.
-- Email verification- When creating an account the site takes the users, 'username', 'email' and 'password'. Currently the email is not used within the database.
+- Character stats- During the D&D characters creation process, the character stats are an important part. Adding a feature where the user can change the stats of the characters they made would be a natural addition.
+- Improve the character save option, reducing from two buttons to one.
+- Email verification- When creating an account, the site takes the users, 'username', 'email' and 'password'. Currently the email is not used within the database.
     - Adding email verification the user can confirm they have signed up to the site and will also need to validate their email address.
-- Password reset- With email verification naturally the ability to reset the user password would be a helpful addition and improve the user experience.
-- Ask user the confirm if they want to delete a character.
+- Password reset- With email verification, naturally the ability to reset the user password would be a helpful addition and improve the user experience.
+- Ask user to confirm if they want to delete a character.
 
 
 <a name="technologies"></a>
@@ -137,8 +135,8 @@ Two different fonts have been selected for use on this site. Both fonts have bee
 
 ### Languages
 - Python/Flask- Used to create all functionality of the site, all pages are rendered using flask methods.
-    - Flask has also been used to connect the site to the Mongo.DB database where all information is stored and accessed from.
-- HTML- Used for all template pages for the site and then rendered using flask. Also used for the basic form structure and validation.
+    - Flask has also been used to connect the site to the Mongo.DB database, where all information is stored and accessed from.
+- HTML- Used for all template pages for the site and then rendered using Flask. Also used for the basic form structure and validation.
 - CSS- Mostly used in conjunction with the Materialize CSS library to style and structure all the pages.
 - Javascript- Used via JQuery and use to activate the Materialize CSS drop down selectors.
 ### Programs
@@ -168,10 +166,10 @@ Form validation not displaying required characters.
 - Gave text inputs a 'title' displaying what characters they could use within the input.
 
 Error when users don't upload image when creating a character.
-- Changed the input to a required input meaning the user must create a character with an image.
+- Changed the input to a required input, meaning the user must create a character with an image.
 
-User log in giving error when fields are empty.
-- Added required to the log in input area so the button cannot submit empty fields.
+User login giving error when fields are empty.
+- Added required to the login input area, so the button cannot submit empty fields.
 
 Saved character functionality available for non logged in users and giving error.
 - Removed the option for save characters if the user is not logged in.
@@ -180,7 +178,7 @@ Saved character functionality not saving characters.
 - Saved the name of the character to save as a new array within the 'user' database.
 
 Saved characters not showing on profile page.
-- Looped through all characters within the database comparing the character name with the saved name in the user database. Then displaying the characters where the names are the same.
+- Looped through all characters within the database, comparing the character name with the saved name in the user database, then displaying the characters where the names are the same.
 
 ### Nav Bar
 - Checked that all links work correctly, taking the user to the desired page.
@@ -192,11 +190,11 @@ Saved characters not showing on profile page.
 
 ### Footer
 - All links work as intended, taking user to social media sites.
-- Git hub and linked in work as intended taking user to creator pages.
-- Portfolio site is a dead link opening the new instance of the site.
+- GitHub and LinkedIn work as intended, taking user to creator pages.
+- Portfolio site is a dead link, opening the new instance of the site.
 
 ### Tavern 
-- Users are allowed to access this page without logging in and displayed well on all screen sizes.
+- Users are allowed to access this page without logging in and is displayed well on all screen sizes.
 - Characters are displayed as intended, users not logged in are unable to save characters. 
 - Search functionality works as intended.
 - Clear button reloads the page without the search criteria.
@@ -229,25 +227,25 @@ Saved characters not showing on profile page.
 - Desktop:  Works as intended.
 
 ### Browsers 
-- Firefox: Working as intended no errors.
-- Microsoft Edge: Working as intended no errors.
-- Chrome: Working as intended no errors.
-- Safari: Working as intended no errors.
+- Firefox: Working as intended, no errors.
+- Microsoft Edge: Working as intended, no errors.
+- Chrome: Working as intended, no errors.
+- Safari: Working as intended, no errors.
 
 <a name="Deployment"></a>
 
 ## Deployment
 
-### Deployment to Github
-1. Created new file inside documents folder named "Coding Course" and within that created a file called "Javascriptus-Crusade(Milestone Project 2)".
+### Deployment to GitHub
+1. Created new file inside documents folder named "Coding Course" and within that created a file called "The-Drunken-Goblin(Milestone Project 3)".
 2. Opened GitHub Desktop and selected "New Repository".
-3. Gave the project name "Sharks-Under-Threat" and clicked "Create Repository".
+3. Gave the project name "The-Drunken-Goblin" and clicked "Create Repository".
 4. Opened the repository in VS Code.
 5. Created index.html and README.md pages.
 6. Opened up local terminal and "Git Added" both pages.
 7. Committed both pages using "Git Commit".
 8. Pushed changed with "Git Push" adding my work to my Git Hub page.
-9. Opened my GitHib page to see the changes.
+9. Opened my GitHub page to see the changes.
 
 ### How to fork the project
 1. Select repository you wish to fork.
@@ -264,12 +262,12 @@ Saved characters not showing on profile page.
 2. On the right hand side of the screen selected 'new' drop down menu then selected 'create new app'.
 3. Entered an app name and selected create app.
 4. Selected Connect to git hub.
-5. Entered the name of the repo from github I wanted to use.
+5. Entered the name of the repo from GitHub I wanted to use.
 6. Once linked to git hub selected 'settings'.
 7. Selected 'reveal config vars'
 8. On the config vars menu added all my environment variables including secret key.
 9. Selected 'deploy' from menu and enabled automatic deploys.
-10. Site automatically deploys when new code is pushed up to github.
+10. Site automatically deploys when new code is pushed up to GitHub.
 11. Selected 'open app' in the top right corner to view live site.
 
 <a name="credits"></a>
@@ -277,7 +275,7 @@ Saved characters not showing on profile page.
 ## Credits
 
 ### Technical
-- Google Fonts: Uses for both fonts within the site.
+- Google Fonts: Used for both fonts within the site.
 - Font awesome: Used for all icons within the site.
 - Code Institute Task Manager Project: Provided me with basic ideas and how to format my python/flask code. 
 ### Content 
