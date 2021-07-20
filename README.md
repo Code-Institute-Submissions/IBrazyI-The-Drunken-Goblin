@@ -203,6 +203,22 @@ Saved characters not showing on profile page.
 - Logged in characters can save characters.
 - Logged in characters can edit and delete their own characters, these links take them to the desired page.
 
+### Profile
+- Profile page is only available to users who have logged in.
+- Shows characters the user has created.
+- Shows characters the user as saved from other users.
+- Links to edit and delete user characters are available.
+
+### Create 
+- All form fields are blank upon loading in.
+- Drop down menus work and display correct information.
+- Cannot submit new character without all fields containing information.
+
+### Edit
+- Placeholder text shows information of character to be edited.
+- Submitting form without re-entering details doesn't change database data as intended.
+
+
 ### Devices
 - Galaxy S9: Works as intended.
 - Galaxy S20: Works as intended.
