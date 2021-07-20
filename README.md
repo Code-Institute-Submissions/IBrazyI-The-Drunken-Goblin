@@ -123,7 +123,11 @@ Two different fonts have been selected for use on this site. Both fonts have bee
 
 
 #### Features Left to Implement
-
+- Character stats- During the DnD characters creation process the character stats are an important part. Adding a feature where the user can change the stats of the characters they made would be a natural addition.
+- Improve the character save option reducing from two buttons to one.
+- Email verification- When creating an account the site takes the users, 'username', 'email' and 'password'. Currently the email is not used within the database.
+    - Adding email verification the user can confirm they have signed up to the site and will also need to validate their email address.
+- Password reset- With email verification naturally the ability to reset the user password would be a helpful addition and improve the user experience.
 
 
 <a name="technologies"></a>
@@ -131,13 +135,15 @@ Two different fonts have been selected for use on this site. Both fonts have bee
 ## Technologies Used
 
 ### Languages
-- HTML5: Used as the basic structure for Index/Play page, also used to create header element for all pages.
-- CSS3: Used to style and structure all content.
-- Java script: Used to provide all functionality for all aspects of the site including; game play and interactions, dynamically changing information
-     displayed on pages and also for the intro sequence.
+- Python/Flask- Used to create all functionality of the site, all pages are rendered using flask methods.
+    - Flask has also been used to connect the site to the Mongo.DB database where all information is stored and accessed from.
+- HTML- Used for all template pages for the site and then rendered using flask. Also used for the basic form structure and validation.
+- CSS- Mostly used in conjunction with the Materialize CSS library to style and structure all the pages.
+- Javascript- Used via JQuery and use to activate the Materialize CSS drop down selectors.
 ### Programs
 - VS Code: Where all coding took place.
-- Adobe XD: Used to create wireframes.
+- Balsamic: Used to create wireframes.
+- Heroku: Used to deploy the site for public use.
 - Git Hub: Used to host the websites repository.
 - Git Hub Desktop: Used to access the repository linking it to online Git Hub profile.
 - IAmResponsive: Used to test responsiveness of site.
@@ -150,27 +156,7 @@ Two different fonts have been selected for use on this site. Both fonts have bee
 ## Testing
 
 ### Bugs
-Intro sequence repeating when selecting the "play" nav element.
-- Created a session storage loop that plays when the intro sequence first plays that prevents it from happening until page is exited then reloaded.
 
-Images displaying incorrectly on smaller screen sizes.
-- Created custom image sizes at different screen sizes using media queries, also centred the images.
-
-Game not interacting as intended, questions not changing after each button press.
-- Ensured there were no typos or spelling errors within the content.js file, created "i" variable using a loop that iterated through the object.
-
-Player health not resetting after each game.
-- After each game sequence reset the health of each faction to the correct value, in case the user wanted to play more than one round.
-
-Game questions and answers displaying the wrong text.
-- Ensured that all campaigns contained their own function and objects.
-
-Local storage not accepting selected options until page had been refreshed.
-- Moved the local storage save function within the document so it took place before the campaign selection function. Also added a local storage reset after each playthrough.
-
-Question interactions repeating even after only one button press.
-- Changed the question answer buttons from event listeners to "on-click" events, this meant that event listeners had to be removed after each question as the buttons were re-used multiple times
-    and were in the function of the game.
 
 
 
