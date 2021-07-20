@@ -277,16 +277,28 @@ Saved characters not showing on profile page.
 ## Credits
 
 ### Technical
-
-
- ### Content 
-
-
- 
-
- 
+- Google Fonts: Uses for both fonts within the site.
+- Font awesome: Used for all icons within the site.
+- Code Institute Task Manager Project: Provided me with basic ideas and how to format my python/flask code. 
+### Content 
+- Dungeons & Dragons Player's Handbook: Uses for character 'race' and 'class' information.
+- Users: Creating the characters and filling the database.
  ### Images
+Landing
+https://i.ytimg.com/vi/hWPPD5ww0eA/maxresdefault.jpg
+https://external-preview.redd.it/1no2NdmVJeE2M84ApL2X4Pb3Zh_tVpn2hYSZSSMhNqU.jpg?auto=webp&s=3fe9882592bef2e4f24b22124aed13a0b6fc3904
 
+Register
+https://static.pressakey.de/gfxgames/Pathfinder-Kingmaker-4865-1591870547.jpg
+
+Tavern
+https://images.squarespace-cdn.com/content/v1/5bd88db093a6320f071b1a50/1588853697418-KDEWXMDNH4SMZPDGZMY7/Tavern%252Bart.jpg?format=2500w
+
+Profile
+https://lh3.googleusercontent.com/proxy/Qz9EHpDUJcC35E7aTTJigzTekJ0jzJ5GjskGN3CIH0oGGg5DxtcRPE5MpPzFNn22HmdhQrS_Jmk-J1n_gPm1AH1g04sdI6Y1Vyb_g22xpKVWJfDt_df_sPNP4b9-ropnTX4
+
+Create/Edit
+https://thenerdd.files.wordpress.com/2019/11/ghostsdragonspear1.jpg
 
  ### Acknowledgements
 - Code Institute - Running the course and providing this opportunity. 
