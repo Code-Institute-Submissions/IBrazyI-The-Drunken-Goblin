@@ -55,7 +55,7 @@
     {% if character|length > 0 %}
     <div class="row valign-wrapper hide-on-med-and-down">
         <div class="col l10 offset-l1 tavern_characters grey darken-1 white-text valign-wrapper center">
-            <div class="col l3 character-image"><img src="{{ character.character_image }}"></div>
+            <div class="col l3 character-image"><img src="{{ character.character_image }}" alt="{{ character.character_name }}"></div>
             <div class="col l1">{{ character.character_name }}</div>
             <div class="col l1">{{ character.character_race }}</div>
             <div class="col l1">{{ character.character_class }}</div>
