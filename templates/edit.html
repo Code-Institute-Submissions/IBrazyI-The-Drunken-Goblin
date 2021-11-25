@@ -12,7 +12,7 @@
       </div>
 
       <div class="row">
-        <form class="form-style white-text" method="POST" action="{{ url_for('edit', character_id=character._id) }}">
+        <form class="form-style white-text" enctype="multipart/form-data" method="POST" action="{{ url_for('edit', character_id=character._id) }}">
 
           <div class="row">
             <div class="col s8 m4 offset-s2 offset-m4 center">
