@@ -3,7 +3,8 @@ from logging import debug
 import os
 import re
 from flask import (
-    Flask, flash, render_template, redirect, request, session, url_for, jsonify)
+    Flask, flash, render_template, redirect,
+    request, session, url_for, jsonify)
 from dotenv import load_dotenv
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -26,26 +27,27 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-#Landing page, also contains log in functionality
+# Landing page, also contains log in functionality
 
 @app.route("/")
 @app.route("/landing.html", methods=["GET", "POST"])
 def landing():
     if request.method == "POST":
-        #Checking that Username exists
+        # Checking that Username exists
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-                #Checking password entered matches
+                # Checking password entered matches
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                #Stores session"user" where the username is passed into the profile function
+                # Stores session"user" where the username is
+                #  passed into the profile function
                 return redirect(url_for('profile'))
                 
             else:
-                #Incorrect Password
+                # Incorrect Password
                 return redirect(url_for('landing'))
 
         else:
@@ -54,10 +56,10 @@ def landing():
     return render_template(url_for('landing'))
 
 
-#Register page, stores user details within the databse
+# Register page, stores user details within the databse
 
 @app.route("/register.html", methods=["GET", "POST"])
-def register(): 
+def register():
     if request.method =="POST":
         already_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()}) 
@@ -83,7 +85,7 @@ def register():
     return render_template(url_for('register'))
 
 
-#Upload images to Cloudinary
+# Upload images to Cloudinary
 
 def upload(file):
     app.logger.info('in upload route')
@@ -92,7 +94,7 @@ def upload(file):
     return cloudinary.uploader.upload(file, width=200, height=300)
 
 
-#Create a character page
+# Create a character page
 
 @app.route("/create.html", methods=["GET", "POST"])
 def create():
@@ -123,7 +125,7 @@ def create():
     return render_template('create.html', races_list=races_list, classes_list=classes_list)
 
 
-#Edit already made characters
+# Edit already made characters
 
 @app.route("/edit/<character_id>", methods=["GET", "POST"])
 def edit(character_id):
@@ -145,7 +147,7 @@ def edit(character_id):
             "character_dislikes": request.form.get("character_dislikes"),
             "character_bio": request.form.get("character_bio"),
             "character_user": session['user'],
-            "character_image": request.files['file']
+            "character_image": upload(request.files['file'])
         }
 
         mongo.db.characters.replace_one(character, new_character)
@@ -155,7 +157,7 @@ def edit(character_id):
     return render_template('edit.html', character=character, races_list=races_list, classes_list=classes_list)
 
 
-#Render the users profile, also provides arrays to loop through from profile.html page.
+# Render the users profile, also provides arrays to loop through from profile.html page.
 
 @app.route("/profile.html", methods=["GET", "POST"])
 def profile():
@@ -166,9 +168,9 @@ def profile():
     saved_characters = current_user["saved_characters"]
     
     return render_template(url_for('profile'), characters=characters, all_chars=all_chars, saved_characters=saved_characters)
-    
+   
 
-#Main page displays chracters that are stored within the database.
+# Main page displays chracters that are stored within the database.
 
 @app.route("/tavern.html")
 def tavern():
@@ -179,7 +181,7 @@ def tavern():
     return render_template('tavern.html', characters=characters, user=user)
 
 
-#Function within the tavern page, provides search functionality within the character database.
+# Function within the tavern page, provides search functionality within the character database.
 
 @app.route("/search", methods=["GET","POST"])
 def search():
@@ -192,7 +194,7 @@ def search():
 # App Routes that require REDIRECT
 
 
-#Removes the current session 'user'
+# Removes the current session 'user'
 
 @app.route("/logout")
 def logout():
@@ -202,7 +204,7 @@ def logout():
     return redirect(url_for('landing'))
 
 
-#Provides delete functionality removing character from the database. Can only be done by the characters creator.
+# Provides delete functionality removing character from the database. Can only be done by the characters creator.
 
 @app.route("/delete/<character_id>")
 def delete(character_id):
@@ -211,7 +213,7 @@ def delete(character_id):
     return redirect(url_for('profile'))
 
 
-#Provides the functionlaity for the user to save characters they have not made.
+# Provides the functionlaity for the user to save characters they have not made.
 
 @app.route("/savecharacter/<character_id>")
 def savecharacter(character_id):
@@ -231,10 +233,11 @@ def savecharacter(character_id):
             { "$push": {"saved_characters": character_name}}
         )
         user_characters = user["saved_characters"]
-        return redirect(url_for('tavern', character_name=character_name, user_characters=user_characters))
-    
+        return redirect(url_for('tavern', character_name=character_name,
+        user_characters=user_characters))
+   
 
-#Provides the functionlaity for the user to remove currentley saved characters.
+# Provides the functionlaity for the user to remove currentley saved characters.
 
 @app.route("/removesavecharacter/<character_id>")
 def removesavecharacter(character_id):
@@ -251,7 +254,6 @@ def removesavecharacter(character_id):
     )
 
     return redirect(url_for('tavern'))
-
 
 
 if __name__ == "__main__":
