@@ -139,6 +139,7 @@ def edit(character_id):
     classes_list = classes.find().sort("class_name", 1)
 
     if request.method == "POST":
+        img_upload = upload(request.files['file'])
         new_character = {
             "character_name": request.form.get("character_name"),
             "character_race": request.form.get("character_race"),
@@ -147,7 +148,7 @@ def edit(character_id):
             "character_dislikes": request.form.get("character_dislikes"),
             "character_bio": request.form.get("character_bio"),
             "character_user": session['user'],
-            "character_image": upload(request.files['file'])
+            "character_image": img_upload["secure_url"]
         }
 
         mongo.db.characters.replace_one(character, new_character)
