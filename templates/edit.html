@@ -16,13 +16,13 @@
 
           <div class="row">
             <div class="col s8 m4 offset-s2 offset-m4 center">
-              <input class="white-text" value="{{ character.character_name }}" name="character_name" id="character_name" type="text">
+              <input class="white-text" value="{{ character.character_name }}" name="character_name" id="character_name" type="text" required>
             </div>
           </div>
 
           <div class="row">
             <div class="col s8 m4 offset-s2 offset-m4 left">
-              <input class="file-upload" value="{{ character.character_image }}" type="file" name="file" id="fileid">
+              <input class="file-upload" value="{{ character.character_image }}" type="file" name="file" id="fileid" required>
             </div>
           </div>
 
@@ -50,13 +50,13 @@
 
           <div class="row">
             <div class="col s8 m4 offset-s2 offset-m4 center">
-              <input value="{{ character.character_likes }}" name="character_likes" id="character_likes" class="white-text" type="text">
+              <input value="{{ character.character_likes }}" name="character_likes" id="character_likes" class="white-text" type="text" required]>
             </div>
           </div>
 
           <div class="row">
             <div class="col s8 m4 offset-s2 offset-m4 center">
-              <input value="{{ character.character_dislikes }}" name="character_dislikes" id="character_dislikes" class="white-text" type="text">
+              <input value="{{ character.character_dislikes }}" name="character_dislikes" id="character_dislikes" class="white-text" type="text" required>
             </div>
           </div>
 
