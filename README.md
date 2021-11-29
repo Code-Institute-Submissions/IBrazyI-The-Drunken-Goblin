@@ -156,6 +156,7 @@ Two different fonts have been selected for use on this site. Both fonts have bee
 ## Testing
 - Code Validators- 
 - Python ![Python Validation](/static/images/pythonchecker.jpg)
+    - All python code is now PEP8 compliant (29/11/21).
 - HTML ![HTML Validation](/static/images/htmlchecker.jpg)
 - CSS ![CSS Validation](/static/images/cssvalidator.jpg)
     - Only errors to show are with Materialise Library.
@@ -215,6 +216,11 @@ Saved characters not showing on profile page.
 ### Edit
 - Placeholder text shows information of character to be edited.
 - Submitting form without re-entering details doesn't change database data as intended.
+#### Testing for re-submit (29/11/21)
+- Text within edit form now auto filled correctley, no longer placeholder text.
+- Form can now not be submitted without an image.
+- New images are uploaded and saved correctley to websites cloudinary API and display as intend within the tavern.html and profile.html.
+- 
 
 ### Devices
 - Galaxy S9: Works as intended.
