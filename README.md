@@ -5,7 +5,7 @@
 [Visit My Site Here](https://the-drunken-goblin.herokuapp.com/)
 
 ## Overview
-The Drunken Goblin is a site that provides users with a database to find, create, edit and share role playing characters. It allows users to log in, view
+The Drunken Goblin is a site that provides users with a database to find, create, edit and share role-playing characters. It allows users to log in, view
 their own characters, edit and remove them, and also contains a place where all characters stored into the database can be seen.
 
 ## Table of Contents
@@ -154,7 +154,7 @@ Two different fonts have been selected for use on this site. Both fonts have bee
 <a name="Testing"></a>
 
 ## Testing
-- Code Validators- 
+### Code Validators 
 - Python ![Python Validation](/static/images/pythonchecker.jpg)
     - All python code is now PEP8 compliant (29/11/21).
 - HTML ![HTML Validation](/static/images/htmlchecker.jpg)
@@ -217,9 +217,9 @@ Saved characters not showing on profile page.
 - Placeholder text shows information of character to be edited.
 - Submitting form without re-entering details doesn't change database data as intended.
 #### Testing for re-submit (29/11/21)
-- Text within edit form now auto filled correctley, no longer placeholder text.
+- Text within edit form now auto filled correctly, no longer placeholder text.
 - Form can now not be submitted without an image.
-- New images are uploaded and saved correctley to websites cloudinary API and display as intend within the tavern.html and profile.html.
+- New images are uploaded and saved correctly to website's cloudinary API, and display as intend within the tavern.html and profile.html.
 - 
 
 ### Devices
