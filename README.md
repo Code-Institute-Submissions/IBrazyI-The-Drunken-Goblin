@@ -130,10 +130,10 @@ Two different fonts have been selected for use on this site. Both fonts have bee
 
 #### Data Schema
 ![Dataschema](/static/images/dataschema.png)
-- The relationships between models within the database for this site are simple, all models feed into the Characters model.
-- The "username" is taken from the User model and used to assign the character a "user". 
-- This user in turn will have their characters saved to their profile, also have the option to edit or delete this character.
-- Races and Classes act the same as each other each feeds into the character model and is used to populate the character creation and edit forms with options.
+- The relationships between models within the database for this site are simple; all models feed into the character's model.
+- The "username" is taken from the user model and used to assign the character a "user".
+- This user in turn will have their characters saved to their profile, and will also have the option to edit or delete this character.
+- Races and classes act the same as each other. Each one feeds into the character model, and is used to populate the character creation and edit forms with options.
 
 <a name="technologies"></a>
 
