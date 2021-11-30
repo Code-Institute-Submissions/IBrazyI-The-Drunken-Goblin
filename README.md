@@ -129,7 +129,7 @@ Two different fonts have been selected for use on this site. Both fonts have bee
 - Ask user to confirm if they want to delete a character.
 
 #### Data Schema
-[Dataschema](static/images/dataschema.png)
+[Dataschema](/static/images/dataschema.png)
 - The relationships between models within the database for this site are simple, all models feed into the Characters model.
 - The "username" is taken from the User model and used to assign the character a "user". 
 - This user in turn will have their characters saved to their profile, also have the option to edit or delete this character.
